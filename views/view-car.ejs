@@ -42,15 +42,17 @@
           </div>
           <div class="interior">
           <h4 id="in">Interior</h4>
-          <button class = "img-btn-prev" onclick="rightrotate()">&#10094</button>
-            <button class = "img-btn-next" onclick="leftrotate()">&#10095</button>
-          <img class="pic" id="0" src="https://s.abcnews.com/images/Business/ev-cars-01-mercedes-eqs-ht-jc-210407_1617822996778_hpMain_16x9_1600.jpg" width="400" height="300">
-          <img class="pic1" id="1" src="https://s3.envato.com/files/237500873/Swedainter%2063.jpg"  width="400" height="300">
-          <img class="pic2" id="2" src="https://cleantechnica.com/files/2021/11/ultra-white-interior-tesla-model-x.jpg"  width="400" height="300">
+          <button class = "img-btn-prev" onclick="rightrotate(0)">&#10094</button>
+            <button class = "img-btn-next" onclick="leftrotate(0)">&#10095</button>
+          <img class="pic" id="0" src="<%=product.Iimg1%>" width="400" height="300" style="visibility:visible;">
+          <img class="pic1" id="1" src="<%=product.Iimg2%>"  width="400" height="300"  style="visibility:hidden;">
+          <img class="pic2" id="2" src="<%=product.Iimg3%>"  width="400" height="300"  style="visibility:hidden;">
           </div>
           <div class="exterior">
             <h4 id="in">Exterior</h4>
-            <button class = "img-btn-prev" onclick="next(document.getElementById('image').src)">&#10094</button>
-            <button class = "img-btn-next" onclick="next(document.getElementById('image').src)">&#10095</button>
-            <img class="pic" id="1e" src="https://s.abcnews.com/images/Business/ev-cars-01-mercedes-eqs-ht-jc-210407_1617822996778_hpMain_16x9_1600.jpg" width="400" height="300">
+            <button class = "img-btn-prev" onclick="rightrotate(1)">&#10094</button>
+            <button class = "img-btn-next" onclick="leftrotate(1)">&#10095</button>
+            <img class="pic" id="0e" src="<%=product.Eimg1%>" width="400" height="300" style="visibility:visible;">
+          <img class="pic1" id="1e" src="<%=product.Eimg2%>"  width="400" height="300"  style="visibility:hidden;">
+          <img class="pic2" id="2e" src="<%=product.Eimg3%>"  width="400" height="300"  style="visibility:hidden;">
           </div>

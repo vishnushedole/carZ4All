@@ -2,6 +2,7 @@ body{
    position: relative;
    border: 0px;
    margin: 0px;
+   
 }
 .navigation-bar{
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
@@ -82,7 +83,7 @@ body{
 .form{ 
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
     width:800px;
-    height:700px;
+    height:1000px;
     display:grid;
     grid-template-columns: 100%;
     position:relative;
@@ -386,22 +387,25 @@ input:hover{
     position: relative;
     top:-60px;
     left:40px;
+    border-radius: 10px;
     /* z-index: 0; */
-    visibility: visible;
+    /* visibility: visible; */
 }
 .pic1{
     position: relative;
     top:-364px;
     left:40px;
+    border-radius: 10px;
     /* z-index:1; */
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 .pic2{
     position: relative;
     top:-667px;
     left:40px;
+    border-radius: 10px;
     /* z-index:2; */
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 .img-btn-prev
 {

@@ -1,7 +1,7 @@
 const Product = require('../model/admin');
 
 exports.saveproduct= (req,res,next)=>{
- const product = new Product(req.body.carname,req.body.carimageurl,req.body.price,req.body.Model,req.body.seats,req.body.colors,req.body.fuel,req.body.launch_year,req.body.category);
+ const product = new Product(req.body.carname,req.body.carimageurl,req.body.price,req.body.Model,req.body.seats,req.body.colors,req.body.fuel,req.body.launch_year,req.body.category,req.body.Iimg1,req.body.Iimg2,req.body.Iimg3,req.body.Eimg1,req.body.Eimg2,req.body.Eimg3);
  
    product.save();
    res.render('admin-addproduct');
@@ -42,7 +42,7 @@ exports.update=(req,res,next)=>{
 
 exports.savechanges=(req,res,next)=>{
   
-    Product.SaveChanges(req.body.id,req.body.carname,req.body.carimageurl,req.body.price,req.body.Model,req.body.seats,req.body.colors,req.body.fuel,req.body.launch_year,req.body.category).then(result=>{
+    Product.SaveChanges(req.body.id,req.body.carname,req.body.carimageurl,req.body.price,req.body.Model,req.body.seats,req.body.colors,req.body.fuel,req.body.launch_year,req.body.category,req.body.Iimg1,req.body.Iimg2,req.body.Iimg3,req.body.Eimg1,req.body.Eimg2,req.body.Eimg3).then(result=>{
       res.redirect('/admin/delete-update');
     }).catch(err=>console.log(err));
 };

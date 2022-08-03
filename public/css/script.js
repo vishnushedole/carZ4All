@@ -1,25 +1,49 @@
 
 var ID =['0','1','2'];
-var Z =[];
-function leftrotate(){
-    var i;
+var ID1 =['0e','1e','2e']
+function leftrotate(s){
+    var i,index,id;
+    
     for(i=0;i<3;i++)
     {
-        var z=document.getElementById(ID[i]).style.visibility;
-       if(z=="hidden")
-       document.getElementById(ID[i]).style.visibility="visible"
+        id=(s==0)?ID[i]:ID1[i];
+        var z=document.getElementById(id).style.visibility;
+        
+       if(z=="visible")
+       {
+        document.getElementById(id).style.visibility="hidden";
+        index=i;
+        break;
+       }
        
     }
-    var firstvalue=Z[0];
-    for(i=0;i<2;i++)
-    {
-        Z[i]=Z[i+1];
-    }
-    Z[2]=firstvalue;
+    index=(index+1)%3;
+    id=(s==0)?ID[index]:ID1[index];
+    document.getElementById(id).style.visibility="visible";
+    
+}
+function rightrotate(s){
+    var i,index,id;
+    
     for(i=0;i<3;i++)
     {
-        var ele=document.getElementById(ID[i]).style; 
-        ele.zIndex=Z[i];
-        // console.log(Z[i]);
+        id=(s==0)?ID[i]:ID1[i];
+        var z=document.getElementById(id).style.visibility;
+        
+       if(z=="visible")
+       {
+        document.getElementById(id).style.visibility="hidden";
+        index=i;
+        break;
+       }
+       
     }
+    if(index)
+    index=(index-1)%3;
+    else
+    index=2;
+
+    id=(s==0)?ID[index]:ID1[index];
+    document.getElementById(id).style.visibility="visible";
+    
 }
