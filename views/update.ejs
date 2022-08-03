@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/css/style.css" rel="stylesheet">
+        <title>update product</title>
+    </head>
+    <body>
+        <nav class="navigation-bar">
+            <h3>Admin Page</h3>
+        </nav>
+        
+        <form action="/admin/savechanges" method="POST" class="form">
+            <div>
+                <label class="lbl">car name   </label>
+         <input type="text" name="carname" id="carname" class="inp" value="<%= product[0].carname %>" >
+            </div>
+            <div>
+                <label class="lbl">car imageurl  </label>
+         <input type="text" name="carimageurl" id="carimageurl" class="inp" value="<%= product[0].imageurl %>" >
+            </div>
+            
+           <div>
+                <label class="lbl">Price    </label>
+         <input type="text" name="price" id="Price" class="inp" value="<%= product[0].price %>" > 
+         </div>
+         <div>
+            <label class="lbl">Model    </label>
+     <input type="text" name="Model" id="Model" class="inp" value="<%= product[0].model %>" > 
+     </div>
+     <div>
+     <label class="lbl">Seats    </label>
+     <input type="text" name="seats" id="seats" class="inp" value="<%= product[0].seats %>"> 
+        </div>
+        <div>
+            <label class="lbl">colors    </label>
+     <input type="text" name="colors" id="colors" class="inp" value="<%= product[0].colors %>"> 
+        </div>
+        <div>
+            <label class="lbl">Fuel    </label>
+     <input type="text" name="fuel" id="fuel" class="inp" value="<%= product[0].Fuel %>"> 
+        </div>
+        <div>
+            <label class="lbl">Launch_year    </label>
+     <input type="text" name="launch_year" id="launch_year" class="inp" value="<%= product[0].Launch_year %>"> 
+        </div>
+        <div>
+            <label class="lbl">Category    </label>
+     <input type="text" name="category" id="category" class="inp" value="<%= product[0].category %>"> 
+        </div>
+            <input type="hidden" name="id" value="<%= product[0].id%>" >
+            <input type="submit" value="SAVE" class="admin-btn">
+        </form>
+
+
+        <% if(specs){ %>
+        <form action="/admin/savespecchanges" method="POST" class="specform">
+            <div>
+                <label class="lbl">car name</label>
+         <input type="text" name="Scarname" id="carname" class="inp" value="<%=specs.carname %>">
+            </div>
+            <div>
+                <label class="lbl">Model  </label>
+         <input type="text" name="Smodel" id="Model" class="inp" value="<%=specs.model %>">
+            </div>
+           <div>
+                <label class="lbl">category   </label>
+         <input type="text" name="Scategory" id="category" class="inp" value="<%=specs.category %>"> 
+            </div>
+            <div>
+                <label class="lbl">Tyre size    </label>
+         <input type="text" name="tyresize" id="tyresize" class="inp" value="<%=specs.tyresize %>"> 
+            </div>
+            <div>
+                <label class="lbl">Tank Capacity    </label>
+         <input type="text" name="tankcapacity" id="tankcapacity" class="inp" value="<%=specs.tankcapacity %>"> 
+            </div>
+            <div>
+                <label class="lbl"> Suspension   </label>
+         <input type="text" name="suspension" id="suspension" class="inp" value="<%=specs.suspension %>"> 
+            </div>
+            <div>
+                <label class="lbl"> Ground clearance  </label>
+         <input type="text" name="groundclearance" id="groundclearance" class="inp" value="<%=specs.groundclearance %>"> 
+            </div>
+            <div>
+                <label class="lbl">Dimension    </label>
+         <input type="text" name="Dimension" id="Dimension" class="inp" value="<%=specs.dimension %>"> 
+            </div>
+            <div>
+                <label class="lbl">Transmission Type    </label>
+         <input type="text" name="transmissiontype" id="transmissiontype" class="inp" value="<%=specs.TransmissionType %>"> 
+            </div>
+            <div>
+                <label class="lbl">Emission std </label>
+         <input type="text" name="emissionstd" id="emissionstd" class="inp" value="<%=specs.emissionstd %>"> 
+            </div>
+            <div>
+                <label class="lbl">Max Torque </label>
+         <input type="text" name="maxtorque" id="maxtorque" class="inp" value="<%=specs.maxtorque %>"> 
+            </div>
+            <div>
+                <label class="lbl">Max Power </label>
+         <input type="text" name="maxpower" id="maxpower" class="inp" value="<%=specs.maxpower %>"> 
+            </div>
+            <div>
+                <label class="lbl">Engine displacement </label>
+         <input type="text" name="Engdisplacement" id="Engdisplacement" class="inp" value="<%=specs.Eng_displacement %>"> 
+            </div>
+            <div>
+                <label class="lbl">Bluetooth Audio </label>
+         <input type="text" name="bluetoothaudio" id="bluetoothaudio" class="inp" value="<%=specs.bluetoothaudio %>"> 
+            </div>
+            <div>
+                <label class="lbl">Gross Weight </label>
+         <input type="text" name="grossweight" id="grossweight" class="inp" value="<%=specs.grossweight %>"> 
+            </div>
+            <input type="submit" value="SUBMIT" class="sub-btn">
+            
+        </form>
+        <% } %>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/css/style.css" rel="stylesheet">
+        <title>update-delete</title>
+    </head>
+    <body class="body">
+      <nav class="navigation-bar">
+          <h3>Admin page</h3>
+      </nav>
+      <div class="deleteUpd">
+        <% for(let i=0;i<products.length;i++){ %>
+        <div class="car-card">
+           <h4 id="count"><%= i+1%></h4>
+           <h4 id="car-name"><%= products[i].carname %></h4>
+           <h4 id="model"><%= products[i].model%></h4>
+           <h4 id="price"><%= products[i].price %></h4>
+           <form class="frm" action="/admin/delete-product" method="POST">
+            <input type="hidden" value="<%=products[i].id %>" name="id">
+            <input type="hidden" value="<%=products[i].carname %>" name="name">
+            <input type="submit" formaction="/admin/update" value="Update" class="upd-btn">
+            <input type="submit" value="Delete" class="del-btn">
+           </form>
+        </div>
+        <%} %>
+      </div>
+      </body>
+      </html>

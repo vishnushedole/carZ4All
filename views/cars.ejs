@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/css/style.css" rel="stylesheet">
+        <title>Cars</title>
+    </head>
+    <body class="body">
+      <nav class="navigation-bar" style="text-decoration:none ;">
+        
+          <h3 id="heading">CarZ4All</h3>
+      </nav>
+      <div class="filters">
+        <form action="/search_cars" method="POST"><input type="submit" value="Search" id="src-btn">
+          <input type="text" placeholder="Enter Car Name" name="carname" class="search-box">
+          </form>
+          <form action="/filter" method="POST" class="filter-grid">
+            <select name="range" id="range">
+              <option value="1000000-2000000">10,00,000-20,00,000</option>
+              <option value="2000000-3000000">20,00,000-30,00,000</option>
+              <option value="3000000-4000000">30,00,000-40,00,000</option>
+              <option value="7000000-8000000">70,00,000-80,00,000</option>
+            </select>
+            <select name="category" id="range">
+              <option value="volvo">Hatchback</option>
+              <option value="saab">Sedens</option>
+              <option value="SUV">SUV</option>
+              <option value="Mustang">Mustang</option>
+            </select>
+            <select name="fueltype" id="fueltype">
+              <option value="Petrol">Petrol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Premium Gasoline">Premium Gasoline</option>
+            </select>
+            <input type="submit" value="Filter" id="filter-btn">
+          </form>
+      </div>
+    
+      <!-- <h4 id="txt">Select car from here</h4> -->
+      <div class="grid-container">
+        <% for(product of products){ %>
+      <div class="card" >
+        <img src="<%= product.imageurl %>" class="card-img" alt="car-image" height="210" width="445">
+        <div class="card-body">
+          <h3 class="card-title"><%= product.carname %></h3>
+          <div class="disc">
+          <h4 class="card-text"><%= product.model %></h4>
+          <h4 class="card-text">₹<%= product.price %></h4>
+          <hr/>
+          </div>
+          <form method="GET">
+            <input type="hidden" value="<%=product.id%>" name="id">
+            <input type="hidden" value="<%=product.carname%>" name="carname">
+            <button class="btn" formaction="/buycar">Buy</button>
+          <button class="btn" formaction="/viewcar">View</button>
+          </form>
+          
+        </div>
+      </div>
+      <% } %>
+      
+      </div>
+    </div>
+    </body>
+</html>

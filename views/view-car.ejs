@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/css/style.css" rel="stylesheet">
+        <script src="/css/script.js"></script>
+        <title>Cars</title>
+    </head>
+    <body class="body">
+      <nav class="navigation-bar">
+        
+          <h3 id="heading">CarZ4All</h3>
+      </nav>
+      <h3 id="carnamedis"><%= product.carname %></h3>
+      <div class="carinfo" >
+        
+        <img src="<%= product.imageurl %>" class="img" alt="car-image" height="500" width="900">
+        
+         </div>
+         <h3 id="spechead">Specifications </h3>
+         <div class="spec">
+          <h4 class="field">TyreSize  :  <%= specs.tyresize %></h4>
+          <h4 class="field">TankCapcity  : <%= specs.tankcapacity %> </h4>
+          <h4 class="field">Suspention   : <%= specs.suspension %></h4>
+          
+          <h4 class="field">GroundClearance  : <%= specs.groundclearance %> </h4>
+          
+          <h4 class="field">Dimention    : <%= specs.dimension %></h4>
+          
+          <h4 class="field">TransmissionType  : <%= specs.transmissiontype %></h4>
+          
+          <h4 class="field">EmissionStd   : <%= specs.emissionstd %></h4>
+          
+          <h4 class="field">MaxTorque   : <%= specs.maxtorque %> </h4>
+          
+          <h4 class="field">MaxPower   : <%= specs.maxpower %></h4>
+          
+          <h4 class="field">Eng_displacement  : <%= specs.Eng_displacement %></h4>
+          
+          <h4 class="field">BluetoothAudio  : <%= specs.buletoothaudio %> </h4>
+          
+          <h4 class="field">GrossWeight  : <%= specs.grossweight %></h4>
+          </div>
+          <div class="interior">
+          <h4 id="in">Interior</h4>
+          <button class = "img-btn-prev" onclick="rightrotate()">&#10094</button>
+            <button class = "img-btn-next" onclick="leftrotate()">&#10095</button>
+          <img class="pic" id="0" src="https://s.abcnews.com/images/Business/ev-cars-01-mercedes-eqs-ht-jc-210407_1617822996778_hpMain_16x9_1600.jpg" width="400" height="300">
+          <img class="pic1" id="1" src="https://s3.envato.com/files/237500873/Swedainter%2063.jpg"  width="400" height="300">
+          <img class="pic2" id="2" src="https://cleantechnica.com/files/2021/11/ultra-white-interior-tesla-model-x.jpg"  width="400" height="300">
+          </div>
+          <div class="exterior">
+            <h4 id="in">Exterior</h4>
+            <button class = "img-btn-prev" onclick="next(document.getElementById('image').src)">&#10094</button>
+            <button class = "img-btn-next" onclick="next(document.getElementById('image').src)">&#10095</button>
+            <img class="pic" id="1e" src="https://s.abcnews.com/images/Business/ev-cars-01-mercedes-eqs-ht-jc-210407_1617822996778_hpMain_16x9_1600.jpg" width="400" height="300">
+          </div>
