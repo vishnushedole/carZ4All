@@ -22,6 +22,7 @@ module.exports = class Product{
 
 
     save(){
+        
      return db.execute('insert into products (id,carname,imageurl,price,model,seats,colors,fuel,launch_year,category,Iimg1,Iimg2,Iimg3,Eimg1,Eimg2,Eimg3) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[0,this.carname,this.carimageurl,this.price,this.model,this.seats,this.colors,this.fuel,this.launch_year,this.category,this.Iimg1,this.Iimg2,this.Iimg3,this.Eimg1,this.Eimg2,this.Eimg3]);
     }
     static addspecs(carname,model,category,tyresize,tankcapacity,suspension,groundclearance,Dimension,transmissiontype,emissionstd,maxtorque,maxpower,Engdisplacement,bluetoothaudion,grossweight){
@@ -41,14 +42,14 @@ module.exports = class Product{
         return db.execute('select * from products where id=(?)',[id]);
     }
     static fetchSpec(name)
-    {   
+    {  
         return db.execute('select * from specifications where carname=(?)',[name]);
     }
     static SaveChanges(id,carname,carimageurl,price,model,seats,colors,fuel,launch_year,category,Iimg1,Iimg2,Iimg3,Eimg1,Eimg2,Eimg3)
     { 
        return db.execute(`update products set carname='${carname}' ,imageurl='${carimageurl}',price='${price}' ,model='${model}',seats=${seats},colors='${colors}',fuel='${fuel}',launch_year=${launch_year},category='${category}' ,Iimg1='${Iimg1}',Iimg2='${Iimg2}',Iimg3='${Iimg3}',Eimg1='${Eimg1}',Eimg2='${Eimg2}',Eimg3='${Eimg3}' where id=${id}`); 
     }
-    static savespecchanges(carname,model,category,tyresize,tankcapacity,suspension,groundclearance,Dimension,transmissiontype,emissionstd,maxtorque,maxpower,Engdisplacement,bluetoothaudion,grossweight)
+    static savespecchanges(carname,model,category,tyresize,tankcapacity,suspension,groundclearance,Dimension,transmissiontype,emissionstd,maxtorque,maxpower,Engdisplacement,bluetoothaudion,grossweight,id)
     {
         return db.execute(`update specifications set carname='${carname}' ,model='${model}',category='${category}' ,tyresize='${tyresize}',tankcapacity='${tankcapacity}',suspension='${suspension}',groundclearance='${groundclearance}',dimension='${Dimension}',transmissiontype='${transmissiontype}',emissionstd='${emissionstd}',maxtorque='${maxtorque}',maxpower='${maxpower}',Eng_displacement='${Engdisplacement}',bluetoothaudion='${bluetoothaudion}',grossweight='${grossweight}' where id=${id}`);
     }

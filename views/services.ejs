@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/services.css">
+</head>
+
+<body>
+    <div class="navigation-bar" style="text-decoration:none ;">
+        
+        <h3 id="heading">CarZ4All</h3>
+        <a id="a" href="">Popular Brands</a>
+        <a id="a" method="GET" href="/cars">Cars</i></a>
+        <a id="a" method="GET" href="/services">Services</a>
+        <a id="a" method="GET" href="/compare">Compare</a>
+        <a id="a" href="#R" >Review</a>
+    </div>
+    <h1>Service your Car at the best price</h1>
+    <div class="container">
+        <div class="box">
+            <h2>01</h2>
+            <p>Service type One</p>
+            <p>Full Car Service</p>
+            <label for="cars1">Select the type of your car</label>
+            <select name="cars1" id="cars1">
+                <option value="none" selected disabled hidden> Category</option>
+                <option value="hatchback">hatchback</option>
+                <option value="sedan">sedan</option>
+                <option value="suv">suv</option>
+                <option value="lux-sedan">luxury sedan</option>
+                <option value="lux-suv">luxury suv</option>
+            </select>
+            <button class="sbtn" id="btn1" onclick="cost1()">Get Estimated Cost</button>
+        </div>
+        <div class="box">
+            <h2>02</h2>
+            <p>Service type Two</p>
+            <p>Full Engine and Body checkup</p>
+            <label for="cars2">Select the type of your car</label>
+            <select name="cars2" id="cars2">
+                <option value="none" selected disabled hidden> Category</option>
+                <option value="hatchback">hatchback</option>
+                <option value="sedan">sedan</option>
+                <option value="suv">suv</option>
+                <option value="lux-sedan">luxury sedan</option>
+                <option value="lux-suv">luxury suv</option>
+            </select>
+            <button class="sbtn" id="btn2" onclick="cost2()">Get Estimated Cost</button>
+        </div>
+        <div class="box">
+            <h2>03</h2>
+            <p>Service type Three</p>
+            <p>Wheel Alignment and Balancing</p>
+            <label for="cars3">Select the type of your car</label>
+            <select name="cars3" id="cars3">
+                <option value="none" selected disabled hidden> Category</option>
+                <option value="hatchback">hatchback</option>
+                <option value="sedan">sedan</option>
+                <option value="suv">suv</option>
+                <option value="lux-sedan">luxury sedan</option>
+                <option value="lux-suv">luxury suv</option>
+            </select>
+            <button class="sbtn" id="btn3" onclick="cost3()">Get Estimated Cost</button>
+        </div>
+        </div>
+        <div class="conformdelete" style="visibility:hidden" id="conf">
+            <p id="estcost"></p>
+            <button  class="cdel-btn" onclick="closediv()">OK</button>
+          </div>
+          
+    <script src="/css/services.js"></script>
+</body>
+
+</html>

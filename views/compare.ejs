@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Compare</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="/css/compare.css" rel="stylesheet">
+    </head>
+    <% if(cars.length!=0){ %><body onload="mov()"> <% } else { %> <body> <% }%>
+        <div class="navigation-bar" style="text-decoration:none ;">
+        
+            <h3 id="heading">CarZ4All</h3>
+            <a id="a" href="">Popular Brands</a>
+            <a id="a" method="GET" href="/cars">Cars</i></a>
+            <a id="a" method="GET" href="/services">Services</a>
+            <a id="a" method="GET" href="/compare">Compare</a>
+            <a id="a" href="#R" >Review</a>
+        </div>
+        <div class="header">
+            <h1>Compare Cars</h1>
+            <p>
+                Confused which Car you should buy? CarZ4All helps compare two cars of your choice with the best car comparison tool. Compare cars in India on various parameters like price, features, specifications, fuel consumption, mileage, performance, dimension, safety & more to make a smart choice for you.
+            </p>
+        </div>
+        <% if(cars.length!=0) { %>
+            <div class="speccmp" >
+                <div class="spec">
+                    <h4 class="field" style="color:orange">Specifications</h4>
+                    <h4 class="field">&#x2022; TyreSize  : </h4>
+                    <h4 class="field">&#x2022; TankCapcity  :  </h4>
+                    <h4 class="field">&#x2022; Suspention   : </h4>
+                    
+                    <h4 class="field">&#x2022; GroundClearance  :  </h4>
+                    
+                    <h4 class="field">&#x2022; Dimention    : </h4>
+                    
+                    <h4 class="field">&#x2022; TransmissionType  : </h4>
+                    
+                    <h4 class="field">&#x2022; EmissionStd   : </h4>
+                    
+                    <h4 class="field">&#x2022; MaxTorque   : </h4>
+                    
+                    <h4 class="field">&#x2022; MaxPower   : </h4>
+                    
+                    <h4 class="field">&#x2022; Eng_displacement  : </h4>
+                    
+                    <h4 class="field">&#x2022; BluetoothAudio  :  </h4>
+                    
+                    <h4 class="field">&#x2022; GrossWeight  : </h4>
+                    </div>
+    
+                <div class="car1-spec">
+                    <h4 class="field" style="color:orange" ><%=cars[0].carname %></h4>
+                    <h4 class="field">&#x2022; <%= cars[0].tyresize %></h4>
+                    <h4 class="field">&#x2022;  <%= cars[0].tankcapacity %> </h4>
+                    <h4 class="field">&#x2022; <%= cars[0].suspension %></h4>
+                    
+                    <h4 class="field">&#x2022;  <%= cars[0].groundclearance %> </h4>
+                    
+                    <h4 class="field">&#x2022; <%= cars[0].dimension %></h4>
+                    
+                    <h4 class="field">&#x2022; <%= cars[0].transmissiontype %></h4>
+                    
+                    <h4 class="field">&#x2022; <%= cars[0].emissionstd %></h4>
+                    
+                    <h4 class="field">&#x2022;  <%= cars[0].maxtorque %> </h4>
+                    
+                    <h4 class="field">&#x2022; <%= cars[0].maxpower %></h4>
+                    
+                    <h4 class="field">&#x2022;  <%= cars[0].Eng_displacement %></h4>
+                    
+                    <h4 class="field">&#x2022; <%= cars[0].buletoothaudio %> </h4>
+                    
+                    <h4 class="field">&#x2022; <%= cars[0].grossweight %></h4>
+                    </div>
+    
+                    <div class="car2-spec">
+                        <h4 class="field" style="color:orange"><%=cars[1].carname %></h4>
+                        <h4 class="field">&#x2022; <%= cars[1].tyresize %></h4>
+                        <h4 class="field">&#x2022;  <%= cars[1].tankcapacity %> </h4>
+                        <h4 class="field">&#x2022;<%= cars[1].suspension %></h4>
+                        
+                        <h4 class="field">&#x2022;  <%= cars[1].groundclearance %> </h4>
+                        
+                        <h4 class="field">&#x2022;  <%= cars[1].dimension %></h4>
+                        
+                        <h4 class="field">&#x2022;  <%= cars[1].transmissiontype %></h4>
+                        
+                        <h4 class="field">&#x2022;  <%= cars[1].emissionstd %></h4>
+                        
+                        <h4 class="field">&#x2022; <%= cars[1].maxtorque %> </h4>
+                        
+                        <h4 class="field">&#x2022; <%= cars[1].maxpower %></h4>
+                        
+                        <h4 class="field">&#x2022;  <%= cars[1].Eng_displacement %></h4>
+                        
+                        <h4 class="field">&#x2022; <%= cars[1].buletoothaudio %> </h4>
+                        
+                        <h4 class="field">&#x2022; <%= cars[1].grossweight %></h4>
+                        </div>
+            </div>
+            <%   }  %>
+        <div class="box" id="cbox">
+            <div class="b">
+                <p onclick="dis1()" id="caricon1"><i class="fa fa-car fa-6x" aria-hidden="true"></i><h3 >Add Car 1</h3></p>
+                <div id="box1" style="visibility:hidden">
+                <p onclick="hide1()"><i class="fa fa-times" aria-hidden="true"></i></p>
+                <select name="model1" id="mm1" oninput="readm1()">
+                    <option value="none" selected disabled hidden> Category</option>
+                    <option value="Hatchback">Hatchback</option>
+              <option value="sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Mustang">Mustang</option>
+                  </select>
+                  <input type="text" placeholder="Car Name" name="car1" id="cc1" oninput="readc1()">
+                </div>
+            </div>
+            <button class="btn" onclick="dis1()">Select</button>
+
+            <div class="b">
+                <p onclick="dis2()" id="caricon2"><i class="fa fa-car fa-6x" aria-hidden="true"></i><h3 >Add Car 2</h3></p>
+                <div id="box2" style="visibility:hidden">
+                <p onclick="hide2()"><i class="fa fa-times" aria-hidden="true"></i></p>
+                <select name="model2" id="mm2" oninput="readm2()">
+                    <option value="none" selected disabled hidden> Category</option>
+                    <option value="Hatchback">Hatchback</option>
+              <option value="sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Mustang">Mustang</option>
+                  </select>
+                  <input type="text" placeholder="Car Name" name="car2" id="cc2" oninput="readc2()">
+                </div>
+            </div>
+            <button class="btn" onclick="dis2()">Select</button>
+           
+        </div>
+        <form method="GET" action="/comparecars">
+            <input type="hidden" id="c1" name="car1" value="">
+            <input type="hidden" id="c2" name="car2" value="">
+            <input type="hidden" id="m1"name="model1" value="">
+            <input type="hidden" id="m2" name="model2" value="">
+        <button id="cmp"  onclick="return chk()" >Compare</button>
+        </form>
+      
+              <!-- review section -->
+    <div class="reviews" >
+        <h2 id="RH" >Customer Reviews</h2>
+        <div class="container" id="R">
+            <div class="box">
+                <div class="name">Drishtant Ranjan</div>
+                <div class="review">The prices are very competitive and the quality is really good. Also there are lots
+                    of different brands and cars to choose from so would highly recommend it.</div>
+            </div>
+            <div class="box">
+                <div class="name">Prakhar Pandey</div>
+                <div class="review">The behaviour of the all the staffs are very good and polite. All of them were very
+                    helpful in clearing all our doubts and it was a very nice experience.</div>
+            </div>
+            <div class="box">
+                <div class="name">M Sai Santosh</div>
+                <div class="review">The service costs are very cheap when compared to other dealerships for the same
+                    brand and model of the car. The service quality was also top notch.</div>
+            </div>
+            <div class="box">
+                <div class="name">Dhruv Sharma</div>
+                <div class="review">I bought my first car from this dealership and I must say that the experience after
+                    that has been very nice. I would highly recommend everyone to check it out.</div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- footer -->
+      <footer class="ftr" id="f">
+        <div class="container">
+            <div class="about-us">
+                <h2>About Us</h2>
+                <p>Whether you want to get all the information about your favourite car or you want to book your dream
+                    car that you have been planning all this while! CARZ4ALL is the place to be. Got some issues in your
+                    car? CARZ4ALL is there for you! Get to choose from a variety of different packages and service your
+                    car at the lowest cost possible.
+                    <br>
+                    <b>So what are you waiting for. Checkout CARZ4ALL Now!</b>
+                </p>
+                <ul class="social-media">
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="Brands.html">Popular Brands</a></li>
+                    <li><a href="Bookings.html">Bookings</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Categories.html">Category</a></li>
+                    <li><a href="Reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                <ul class="details">
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span>CARZ4ALL, Kasturba Rd, opp. Venkatappa Art Gallery <br> Shanthala Nagar, Ashok Nagar <br>
+                            Bengaluru, Karnataka 560001</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>9876523144</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span>carz4all@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright" id="c">
+      <p>Copyright © 2022 CARZ4ALL. All Rights Reserved.</p>
+  </div>
+
+        <script src="/css/script.js"></script>
+    </body>
+</html>

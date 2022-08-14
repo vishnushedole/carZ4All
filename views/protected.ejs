@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carz4All</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id = "first">
+        <a href="/" style="text-decoration:none ;"><h1 style="color:aliceblue;">Carz4All</h1></a>
+        <nav class="right"> 
+            <ul>
+                <li><a method="GET" href="/">Home</a></li>
+                <li><a method="GET" href="/cars">Cars</a></li>
+                <li><a method="GET" href="/services">Services</a></li>
+                <li><a method="GET" href="/compare">Category</a></li>
+                <li><a id="a" href="#R" >Review</a></li>          
+            </ul> 
+        </nav>
+        <button id="logout"><a href="/logout">LOGOUT</a></button>    
+    </div>
+    
+    <h1 class="firstHeading">Welcome</h1>
+    <div id="pageDiv">
+        <div id = "second">
+            <button class = "img-btn-prev" onclick="prev(document.getElementById('image').src)">&#10094</button>
+                <img id = "image" src="images/slavia.jpg">
+                <p class="imgcaption">Skoda Slavia</p>
+            <button class = "img-btn-next" onclick="next(document.getElementById('image').src)">&#10095</button> 
+        </div>
+        
+    </div>
+    
+    <div class="brands">
+        <h1 class="firstHeading">Choose From Your Favourite brands</h1>
+        <div class="innerdiv">
+            <a href=""><img src="images/tata.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/maruti.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/hyundai.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/mahindra.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/honda.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/skoda.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/renault.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/volkswagen.jpg" alt="" class="link-img"></a>
+            </div>
+        <div class="innerdiv">
+            <a href=""><img src="images/MG.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/kia.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/mercedes.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/audi.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/land rover.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/jeep.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/bmw.jpg" alt="" class="link-img"></a>
+            <a href=""><img src="images/jaguar.jpg" alt="" class="link-img"></a>
+        </div>
+    </div>
+    
+    <!-- review section -->
+    <div class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="container">
+            <div class="box">
+                <div class="name">Drishtant Ranjan</div>
+                <div class="review">The prices are very competitive and the quality is really good. Also there are lots of different brands and cars to choose from so would highly recommend it.</div>
+            </div>
+            <div class="box">
+                <div class="name">Prakhar Pandey</div>
+                <div class="review">The behaviour of the all the staffs are very good and polite. All of them were very helpful in clearing all our doubts and it was a very nice experience.</div>
+            </div>
+            <div class="box">
+                <div class="name">M Sai Santosh</div>
+                <div class="review">The service costs are very cheap when compared to other dealerships for the same brand and model of the car. The service quality was also top notch.</div>
+            </div>
+            <div class="box">
+                <div class="name">Dhruv Sharma</div>
+                <div class="review">I bought my first car from this dealership and I must say that the experience after that has been very nice. I would highly recommend everyone to check it out.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer>
+        <div class="container">
+            <div class="about-us">
+                <h2>About Us</h2>
+                <p>Whether you want to get all the information about your favourite car or you want to book your dream
+                    car that you have been planning all this while! CARZ4ALL is the place to be. Got some issues in your
+                    car? CARZ4ALL is there for you! Get to choose from a variety of different packages and service your
+                    car at the lowest cost possible.
+                    <br>
+                    <b>So what are you waiting for. Checkout CARZ4ALL Now!</b>
+                </p>
+                <ul class="social-media">
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="Brands.html">Popular Brands</a></li>
+                    <li><a href="Bookings.html">Bookings</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Categories.html">Category</a></li>
+                    <li><a href="Reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                <ul class="details">
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span>CARZ4ALL, Kasturba Rd, opp. Venkatappa Art Gallery <br> Shanthala Nagar, Ashok Nagar <br>
+                            Bengaluru, Karnataka 560001</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>9876523144</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span>carz4all@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>Copyright © 2022 CARZ4ALL. All Rights Reserved.</p>
+    </div>
+    <script src="css/app.js"></script>
+</body>
+</html>
+    

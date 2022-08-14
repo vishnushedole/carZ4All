@@ -2,6 +2,7 @@
 <html>
     <head>
         <link href="/css/style.css" rel="stylesheet">
+        <script src="/css/script.js"></script>
         <title>update-delete</title>
     </head>
     <body class="body">
@@ -9,20 +10,37 @@
           <h3>Admin page</h3>
       </nav>
       <div class="deleteUpd">
+        <div class="car-card">
+          <h4 id="car-slno">SLNO</h4>
+          <h4 id="car-img">Image</h4>
+          <h4 id="car-name">Name</h4>
+          <h4 id="model">Model</h4>
+          <h4 id="price">Price</h4>
+          <h4 id="category">Category</h4>
+          <h4 id="brand">Brand</h4>
+       </div>
         <% for(let i=0;i<products.length;i++){ %>
         <div class="car-card">
            <h4 id="count"><%= i+1%></h4>
+           <img src="<%= products[i].imageurl%>" alt="img" width="80" height="80">
            <h4 id="car-name"><%= products[i].carname %></h4>
            <h4 id="model"><%= products[i].model%></h4>
            <h4 id="price"><%= products[i].price %></h4>
-           <form class="frm" action="/admin/delete-product" method="POST">
+           <h4 id="category"><%= products[i].category %></h4>
+           <h4 id="brand"><%= products[i].brand %></h4>
+           <form class="frm" action="/admin/delete-product" method="POST"  >
             <input type="hidden" value="<%=products[i].id %>" name="id">
             <input type="hidden" value="<%=products[i].carname %>" name="name">
-            <input type="submit" formaction="/admin/update" value="Update" class="upd-btn">
-            <input type="submit" value="Delete" class="del-btn">
+            <button type="submit" formaction="/admin/update"  class="upd-btn" value="Update">Update</button>
+            <button type="submit"    class="del-btn" value="Delete" >Delete</button>  
            </form>
         </div>
         <%} %>
+        <div class="conformdelete" style="visibility:hidden;" id="conf">
+          <p>Are you sure want to delete This product!</p>
+          <button  class="cancel-btn" onclick="Delete(1)">Cancel</button>
+          <button  class="cdel-btn" onclick="Delete(2)">Delete</button>
+        </div>
       </div>
       </body>
       </html>

@@ -28,6 +28,10 @@
      <input type="text" name="Model" id="Model" class="inp" value="<%= product[0].model %>" > 
      </div>
      <div>
+        <label class="lbl">Brand  </label>
+ <input type="text" name="SBrand" id="Brand" class="inp" value="<%=product[0].brand %>">
+    </div>
+     <div>
      <label class="lbl">Seats    </label>
      <input type="text" name="seats" id="seats" class="inp" value="<%= product[0].seats %>"> 
         </div>
@@ -86,6 +90,7 @@
                 <label class="lbl">Model  </label>
          <input type="text" name="Smodel" id="Model" class="inp" value="<%=specs.model %>">
             </div>
+            
            <div>
                 <label class="lbl">category   </label>
          <input type="text" name="Scategory" id="category" class="inp" value="<%=specs.category %>"> 
@@ -138,6 +143,7 @@
                 <label class="lbl">Gross Weight </label>
          <input type="text" name="grossweight" id="grossweight" class="inp" value="<%=specs.grossweight %>"> 
             </div>
+            <input type="hidden" name="id" value="<%= product[0].id%>" >
             <input type="submit" value="SUBMIT" class="sub-btn">
             
         </form>

@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    
+    /* color: rgb(61, 1, 61);
+    background-color: rgb(220, 160, 220); */
+
+}
+.navigation-bar{
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.2);
+    position:absolute;
+    top:0%;
+    left:0%;
+    font-size: 35px;
+    background-color :rgb(134, 4, 134);
+    height:100px;
+    width:100%;
+    text-align: center;
+    color:white;
+}
+#heading{
+    position:relative;
+    top:0px;
+    font-weight:900;
+    font-size: 40px;
+    font-family: 'sans-serif';
+position:absolute;
+left:10px;
+}
+#a{
+    color:white;
+    /* border:solid rgb(14, 13, 13) 1px; */
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 2px;
+    position:relative; 
+     top:35px;
+    font-size: 25px;
+    left:300px;
+}
+.header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.header p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.box{
+    position:relative;
+    
+    margin-top: 120px;
+    margin-left: 200px;
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.b{
+    position: relative;
+    width: 400px;
+    height: 150px;
+    background: white;
+    padding: 40px 40px 40px;
+    display: grid;
+    grid-template-columns: 100%;
+    box-shadow: 7px 7px 7px 7px purple;
+
+}
+
+.btn{
+    position:relative;
+    top:160px;
+    cursor: pointer;
+    margin-top: 30px;
+    left: -280px;
+    
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+    background-color: violet;
+    color: rgb(61, 1, 61);
+}
+
+.btn:hover{
+    background-color: purple;
+    color: white;
+}
+
+
+#box1, #box2{
+    position: relative;
+    top: -250px;
+    left: 100px;
+    width: 100px;
+
+    display: grid;
+    grid-template-columns: 60%;
+    column-gap: 40px;
+    background-color: white;
+}
+
+select, input{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#caricon1, #caricon2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+   position: relative;
+   left: 155px;
+   top: -35px;
+}
+
+#cmp{
+    cursor: pointer;
+    position: relative;
+    left: 620px;
+    top: 80px;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+   
+    background-color: violet;
+    color: rgb(61, 1, 61);
+}
+
+#cmp:hover{
+    background-color: purple;
+    color: white;
+}
+.speccmp{
+    position:relative;
+    top:px;
+
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+}
+.spec {
+    font-weight: 700;
+    box-shadow: 0 15px 15px 0 rgb(36, 35, 35);
+    position:absolute;
+    display:grid;
+    grid-template-columns: 100%;
+    gap:1px 0px;
+    top:30px;
+    left:50px;
+    width:400px;
+    height:1200px;
+}
+.car1-spec{
+    color:rgb(72, 69, 69);
+    background-color: rgb(218, 233, 233);
+    box-shadow: 0 15px 15px 0 rgb(39, 37, 37);
+    position:absolute;
+    display:grid;
+    grid-template-columns: 100%;
+    gap:1px 0px;
+    top:30px;
+    left:500px;
+    width:400px;
+    height:1200px;
+}
+
+.car2-spec{
+    color:rgb(72, 69, 69);
+    background-color: rgb(218, 233, 233);
+    box-shadow: 0 15px 15px 0 rgb(41, 39, 39);
+    position:absolute;
+    display:grid;
+    grid-template-columns: 100%;
+    gap:1px 0px;
+    top:30px;
+    left:950px;
+    width:400px;
+    height:1200px;
+}
+.field{
+    font-size: 20px;
+    box-shadow: 0 5px 5px 0 rgb(97, 96, 96);
+    height:30px;
+    width:100%;
+}
+/* Reviews */
+
+.reviews h2 {
+    position: relative;
+    top:400px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 45px;
+}
+
+.reviews .container {
+    position: relative;
+    top:290px;
+    display: flex;
+    justify-content: left;
+    
+    font-family: 'Poppins', sans-serif;
+}
+
+.reviews .container .box {
+   display: block;
+    overflow-wrap: break-word;
+    position: relative;
+    left:-50px;
+    width:180px;
+    height:150px;
+    box-shadow: 5px 5px purple;
+}
+
+.reviews .container .box .name {
+    position: relative;
+    left:-140px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: purple;
+}
+
+.reviews .container .box .review {
+    overflow-wrap: break-word;
+   position:relative;
+   left:-150px;
+    width:310px;
+    height:150px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.reviews .container .box .review:hover {
+    transform: scale(1.1);
+    transition: 00.3s;
+}
+
+  /* footer css*/
+footer {
+
+    position:relative;
+    top:250px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin-top: 80px;
+    background-color: purple;
+}
+
+footer .container {
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .container .about-us {
+    margin-right: 30px;
+    width: 40%;
+}
+
+footer .container .about-us h2 {
+    text-decoration: underline;
+    position: relative;
+    font-weight: 600;
+
+}
+
+footer .container .about-us p {
+    font-weight: 300;
+}
+
+.social-media {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-media li {
+    list-style: none;
+}
+
+.social-media li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(116, 2, 116);
+    border-radius: 4px;
+
+}
+
+.social-media li a:hover {
+    background-color: rgb(172, 4, 172);
+}
+
+.social-media li a .fa-brands {
+    color: #fff;
+    font-size: 20px;
+}
+
+.quicklinks h2 {
+    margin-left: 39px;
+    text-decoration: underline;
+    position: relative;
+    font-weight: 600;
+}
+
+.quicklinks li {
+    list-style: none;
+    line-height: 30px;
+}
+
+.quicklinks li a {
+    color: #fff;
+    margin-right: 60px;
+    text-decoration: none;
+}
+
+.quicklinks li a:hover {
+    background-color: rgb(172, 4, 172);
+}
+
+.contact-us {
+    width: 350px;
+    margin-right: 10px;
+}
+
+.contact-us h2 {
+    margin-left: 40px;
+    text-decoration: underline;
+}
+
+.contact-us .details {
+    position: relative;
+}
+
+.contact-us .details li {
+    display: flex;
+    margin-bottom: 13px;
+    list-style: none;
+}
+
+.contact-us .details li span {
+    margin-right: 12px;
+}
+
+.copyright {
+    position:relative;
+    bottom: 0px;
+    top:220px;
+    /* left:-8px; */
+    width: 100%;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}

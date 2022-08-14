@@ -2,13 +2,21 @@
 <html>
     <head>
         <link href="/css/style.css" rel="stylesheet">
-        <script src="/css/script.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Cars</title>
+
     </head>
     <body class="body">
       <nav class="navigation-bar">
-        
           <h3 id="heading">CarZ4All</h3>
+          <a id="a" href="">Popular Brands</a>
+          <a id="a" method="GET" href="/cars">Cars</a>
+          <a id="a" href="">Services</a>
+          <a id="a" href="">Category</a>
+          <a id="a" href="#R" >Review</a>
       </nav>
       <h3 id="carnamedis"><%= product.carname %></h3>
       <div class="carinfo" >
@@ -18,27 +26,27 @@
          </div>
          <h3 id="spechead">Specifications </h3>
          <div class="spec">
-          <h4 class="field">TyreSize  :  <%= specs.tyresize %></h4>
-          <h4 class="field">TankCapcity  : <%= specs.tankcapacity %> </h4>
-          <h4 class="field">Suspention   : <%= specs.suspension %></h4>
+          <h4 class="field">&#x2022; TyreSize  :  <%= specs.tyresize %></h4>
+          <h4 class="field">&#x2022; TankCapcity  : <%= specs.tankcapacity %> </h4>
+          <h4 class="field">&#x2022; Suspention   : <%= specs.suspension %></h4>
           
-          <h4 class="field">GroundClearance  : <%= specs.groundclearance %> </h4>
+          <h4 class="field">&#x2022; GroundClearance  : <%= specs.groundclearance %> </h4>
           
-          <h4 class="field">Dimention    : <%= specs.dimension %></h4>
+          <h4 class="field">&#x2022; Dimention    : <%= specs.dimension %></h4>
           
-          <h4 class="field">TransmissionType  : <%= specs.transmissiontype %></h4>
+          <h4 class="field">&#x2022; TransmissionType  : <%= specs.transmissiontype %></h4>
           
-          <h4 class="field">EmissionStd   : <%= specs.emissionstd %></h4>
+          <h4 class="field">&#x2022; EmissionStd   : <%= specs.emissionstd %></h4>
           
-          <h4 class="field">MaxTorque   : <%= specs.maxtorque %> </h4>
+          <h4 class="field">&#x2022; MaxTorque   : <%= specs.maxtorque %> </h4>
           
-          <h4 class="field">MaxPower   : <%= specs.maxpower %></h4>
+          <h4 class="field">&#x2022; MaxPower   : <%= specs.maxpower %></h4>
           
-          <h4 class="field">Eng_displacement  : <%= specs.Eng_displacement %></h4>
+          <h4 class="field">&#x2022; Eng_displacement  : <%= specs.Eng_displacement %></h4>
           
-          <h4 class="field">BluetoothAudio  : <%= specs.buletoothaudio %> </h4>
+          <h4 class="field">&#x2022; BluetoothAudio  : <%= specs.buletoothaudio %> </h4>
           
-          <h4 class="field">GrossWeight  : <%= specs.grossweight %></h4>
+          <h4 class="field">&#x2022; GrossWeight  : <%= specs.grossweight %></h4>
           </div>
           <div class="interior">
           <h4 id="in">Interior</h4>
@@ -56,3 +64,87 @@
           <img class="pic1" id="1e" src="<%=product.Eimg2%>"  width="400" height="300"  style="visibility:hidden;">
           <img class="pic2" id="2e" src="<%=product.Eimg3%>"  width="400" height="300"  style="visibility:hidden;">
           </div>
+
+           <!-- review section -->
+    <div class="reviews" id="R">
+      <h2>Customer Reviews</h2>
+      <div class="container">
+          <div class="box">
+              <div class="name">Drishtant Ranjan</div>
+              <div class="review">The prices are very competitive and the quality is really good. Also there are lots
+                  of different brands and cars to choose from so would highly recommend it.</div>
+          </div>
+          <div class="box">
+              <div class="name">Prakhar Pandey</div>
+              <div class="review">The behaviour of the all the staffs are very good and polite. All of them were very
+                  helpful in clearing all our doubts and it was a very nice experience.</div>
+          </div>
+          <div class="box">
+              <div class="name">M Sai Santosh</div>
+              <div class="review">The service costs are very cheap when compared to other dealerships for the same
+                  brand and model of the car. The service quality was also top notch.</div>
+          </div>
+          <div class="box">
+              <div class="name">Dhruv Sharma</div>
+              <div class="review">I bought my first car from this dealership and I must say that the experience after
+                  that has been very nice. I would highly recommend everyone to check it out.</div>
+          </div>
+      </div>
+  </div>
+
+  <!-- footer -->
+    <footer class="ftr">
+      <div class="container">
+          <div class="about-us">
+              <h2>About Us</h2>
+              <p>Whether you want to get all the information about your favourite car or you want to book your dream
+                  car that you have been planning all this while! CARZ4ALL is the place to be. Got some issues in your
+                  car? CARZ4ALL is there for you! Get to choose from a variety of different packages and service your
+                  car at the lowest cost possible.
+                  <br>
+                  <b>So what are you waiting for. Checkout CARZ4ALL Now!</b>
+              </p>
+              <ul class="social-media">
+                  <li><a href=""><i class="fa-brands fa-twitter"></i></i></a></li>
+                  <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
+                  <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+          </div>
+          <div class="quicklinks">
+              <h2>Quick Links</h2>
+              <ul>
+                  <li><a href="Brands.html">Popular Brands</a></li>
+                  <li><a href="Bookings.html">Bookings</a></li>
+                  <li><a href="Services.html">Services</a></li>
+                  <li><a href="Categories.html">Category</a></li>
+                  <li><a href="Reviews.html">Reviews</a></li>
+              </ul>
+          </div>
+          <div class="contact-us">
+              <h2>Contact Us</h2>
+              <ul class="details">
+                  <li>
+                      <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                      <span>CARZ4ALL, Kasturba Rd, opp. Venkatappa Art Gallery <br> Shanthala Nagar, Ashok Nagar <br>
+                          Bengaluru, Karnataka 560001</span>
+                  </li>
+                  <li>
+                      <span><i class="fa-solid fa-phone"></i></span>
+                      <span>9876523144</span>
+                  </li>
+                  <li>
+                      <span><i class="fa-solid fa-envelope"></i></span>
+                      <span>carz4all@gmail.com</span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+  <div class="copyright">
+    <p>Copyright © 2022 CARZ4ALL. All Rights Reserved.</p>
+</div>
+<script src="/css/script.js"></script>
+        </body>
+        </html>
+        

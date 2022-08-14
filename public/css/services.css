@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background-color: rgb(246, 243, 246);
+    /* background-color: violet; */
+    box-sizing: border-box;
+}
+
+body h1 {
+    position: relative;
+    top:100px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 60px;
+    color: rgb(61, 1, 61);
+}
+
+.container {
+    margin-top: 120px;
+    margin-left: 200px;
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .box {
+    position: relative;
+    width: 350px;
+    background: white;
+    padding: 40px 40px 40px;
+    margin: 10px;
+    box-shadow: 4px 4px 4px 4px purple;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+
+.container .box h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: static;
+}
+
+.container .box:hover{
+    transform: scale(1.1);
+    transition: 00.3s;
+}
+
+.container .box h2,p,label,select{
+    background: white;
+    padding: 5px;
+    color: rgb(61, 1, 61);
+}
+
+.container .box .sbtn {
+    cursor: pointer;
+    justify-content: baseline;
+    margin-top: 30px;
+    font-size: medium;
+    background-color: violet;
+    color: rgb(61, 1, 61);
+}
+
+.container .box .sbtn:hover{
+    background-color: purple;
+    color: white;
+}
+.conformdelete{
+    text-align: center;
+    background-color: rgb(99, 93, 93);
+    
+    font-size:20px;
+    position:fixed;
+    top:35%;
+    left:30%;
+    width:500px;
+    height:200px;
+    border-radius: 10px;
+}
+.cdel-btn
+{
+    position: relative;
+    left:10px;
+    top:70px;
+    font-size: 25px;
+    
+    height:35px;
+    width:200px;
+    color:rgb(255, 247, 247);
+    background-color: rgb(216, 52, 85);
+    border-radius: 5px;
+}
+#estcost{
+  color:black;
+  background-color: rgb(99, 93, 93);
+}

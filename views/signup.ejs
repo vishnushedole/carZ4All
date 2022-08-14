@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id = "first">
+        <a href="/" style="text-decoration:none ;"><h1 style="color:aliceblue;">Carz4All</h1></a>
+        <nav class="right"> 
+            <ul>
+                <li><a href="Brands.html">Popular Brands</a></li>
+                <li><a href="Bookings.html">Bookings</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Categories.html">Category</a></li>     
+            </ul> 
+        </nav>
+            
+    </div>
+    
+    <h1 class="firstHeading">Sign Up</h1>
+    <div class="loginDiv" style="visibility:visible;",>
+        <form class="form", method="post", action = "/addUser">
+            <div class="formelement">
+                <label for="firstname">FirstName:</label>
+                <br>
+                <input type="text", value="", placeholder="FirstName", name="firstname">
+                <label for="lastname">LastName:</label>
+                <br>
+                <input type="text", value="", placeholder="LastName", name="lastname">
+                <label for="username">Email id:</label>
+                <br>
+                <input type="text", value="", placeholder="Enter email", name="username">
+                <Label for="password">Password:</Label>
+                <br>
+                <input type="password", value="", placeholder="Enter password", name="password">
+                <Label for="confirm">Confirm Password:</Label>
+                <br>
+                <input type="password", value="", placeholder="Confirm password", name="confirm">
+                <label for="address">Address:</label>
+                <br>
+                <input type="text", value="", placeholder="Address", name="address">
+                <button id="signinBtn">Create Account</button>
+            </div>
+            <br>
+            
+</body>
+</html>

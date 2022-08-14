@@ -1,7 +1,7 @@
 const Product = require('../model/admin');
 
 exports.saveproduct= (req,res,next)=>{
- const product = new Product(req.body.carname,req.body.carimageurl,req.body.price,req.body.Model,req.body.seats,req.body.colors,req.body.fuel,req.body.launch_year,req.body.category,req.body.Iimg1,req.body.Iimg2,req.body.Iimg3,req.body.Eimg1,req.body.Eimg2,req.body.Eimg3);
+ const product = new Product(req.body.carname,req.body.carimageurl,req.body.price,req.body.Model,req.body.seats,req.body.colors,req.body.fuel,req.body.launch_year,req.body.category,req.body.Iimg1,req.body.Iimg2,req.body.Iimg3,req.body.Eimg1,req.body.Eimg2,req.body.Eimg3,req.body.Brand);
  
    product.save();
    res.render('admin-addproduct');
@@ -48,7 +48,7 @@ exports.savechanges=(req,res,next)=>{
 };
 
 exports.savespecchanges=(req,res,next)=>{
-  Product.savespecchanges(req.body.Scarname,req.body.Smodel,req.body.Scategory,req.body.tyresize,req.body.tankcapacity,req.body.suspension,req.body.groundclearance,req.body.Dimension,req.body.transmissiontype,req.body.emissionstd,req.body.maxtorque,req.body.maxpower,req.body.Engdisplacement,req.body.bluetoothaudio,req.body.grossweight).then(result=>{
+  Product.savespecchanges(req.body.Scarname,req.body.Smodel,req.body.Scategory,req.body.tyresize,req.body.tankcapacity,req.body.suspension,req.body.groundclearance,req.body.Dimension,req.body.transmissiontype,req.body.emissionstd,req.body.maxtorque,req.body.maxpower,req.body.Engdisplacement,req.body.bluetoothaudio,req.body.grossweight,req.body.id).then(result=>{
     res.redirect('/admin/delete-update');
   })
 }
