@@ -15,17 +15,16 @@
         <a href="/" style="text-decoration:none ;"><h1 style="color:aliceblue;">Carz4All</h1></a>
         <nav class="right"> 
             <ul>
-                <li><a method="GET" href="/">Home</a></li>
-                <li><a method="GET" href="/cars">Cars</a></li>
-                <li><a method="GET" href="/services">Services</a></li>
-                <li><a method="GET" href="/compare">Category</a></li>
-                <li><a id="a" href="#R" >Review</a></li>          
+                <li><a href="Brands.html">Popular Brands</a></li>
+                <li><a href="Bookings.html">Bookings</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Categories.html">Category</a></li>     
             </ul> 
         </nav>
-        <button id="logout"><a href="/logout">LOGOUT</a></button>    
+        <button id="signin">SIGN IN</button>    
     </div>
     
-    <h1 class="firstHeading">Welcome</h1>
+    <h1 class="firstHeading">Book Your Dream Car Now!!</h1>
     <div id="pageDiv">
         <div id = "second">
             <button class = "img-btn-prev" onclick="prev(document.getElementById('image').src)">&#10094</button>
@@ -59,9 +58,36 @@
             <a href="/brands" id="Jaguar"onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/jaguar.jpg" alt="" class="link-img"></a>
         </div>
     </div>
+    <div class="loginDiv">
+        <div class="close-btn">&times;</div>
+        <form class="form" action="/login", method="post">
+            <h2>Login</h2>
+            <div class="formelement">
+                <label for="username">Username:</label>
+                <br>
+                <input type="text", value="", placeholder="Enter email", name="username">
+            </div>
     
+            <div class="formelement">
+                <Label for="password">Password:</Label>
+                <br>
+                <input type="password", value="", placeholder="Enter password", name="password">
+            </div>
+            <div class="formelement">
+                <span><label for="remember-me">Remember me</label><input type="checkbox", name="remember_me"></span>
+            <br>
+            <span><a href="">Forgot Password?</a></span>
+            <br>
+            <button id="signinBtn" type="submit">Sign In</button>
+            <br>
+                <button class="loginBtn loginBtn--facebook">Login with Facebook</button>
+                <button class="loginBtn loginBtn--google">Login with Google</button>
+                <span>Not a member? <a href="/signup">Sign up</a></span>   
+            </div>
+         </form>
+    </div>
     <!-- review section -->
-    <div class="reviews" id="#R">
+    <div class="reviews">
         <h2>Customer Reviews</h2>
         <div class="container">
             <div class="box">
@@ -136,7 +162,7 @@
     <div class="copyright">
         <p>Copyright © 2022 CARZ4ALL. All Rights Reserved.</p>
     </div>
-    <script src="css/app.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>
     

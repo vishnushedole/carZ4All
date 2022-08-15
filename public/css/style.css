@@ -18,6 +18,18 @@ body{
     text-align: center;
     color:white;
 }
+.order-navigation-bar{
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.2);
+    position:absolute;
+    top:0%;
+    left:0%;
+    font-size: 35px;
+    background-color :rgb(134, 4, 134);
+    height:100px;
+    width:100%;
+    text-align: center;
+    color:white;
+}
 #a{
     color:white;
     /* border:solid rgb(14, 13, 13) 1px; */
@@ -321,6 +333,16 @@ body{
     height:100px;
     width:100%;
 }
+.order-card{
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    display:grid;
+    grid-template-columns:  10%  10% 10% 10% 10% 10% 10% 15% 15%;
+    background-color: white;
+    /* border:3px solid rgb(140, 138, 138); */
+    border-radius: 7px;
+    height:100px;
+    width:100%;
+}
 .frm{
     position:relative;
     top:30px;
@@ -357,12 +379,48 @@ body{
 #brand{
     position:relative;
     top:5px;
+    left:-25px;
     font-size: 22px;
 }
 #car-slno{
     position: relative;
     top:5px;
     left:3px;
+    font-size: 22px;
+}
+#cust_name{
+    position: relative;
+    top:5px;
+    left:-30px;
+    font-size: 22px;
+}
+#pay_mode{
+    position: relative;
+    top:5px;
+    left:-40px;
+    font-size: 22px;
+}
+#book_date{
+    position: relative;
+    top:5px;
+  
+    font-size: 22px;
+}
+#del_date{
+    position: relative;
+    top:5px;
+    left:15px;
+    font-size: 22px;
+}
+#book_date1{
+    position: relative;
+    top:-5px;
+    font-size: 22px;
+}
+#del_date1{
+    position: relative;
+    top:-5px;
+    left:15px;
     font-size: 22px;
 }
 #car-img{

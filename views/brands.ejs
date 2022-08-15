@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carz4All</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id = "first">
+        <a href="/" style="text-decoration:none ;"><h1 style="color:aliceblue;">Carz4All</h1></a>
+        <nav class="right"> 
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cars">cars</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/compare">Compare</a></li> 
+                <li><a href="#R">Reviews</a></li>    
+            </ul> 
+        </nav>
+        <button id="signin">SIGN IN</button>    
+    </div>
+    
+    <h1 class="firstHeading">Book Your Dream Car Now!!</h1>
+    <div class="grid-container">
+    <% if(results.length!=0){ %>
+        <% for(product of results){ %>
+    <div class="card">
+        <div class="imgBx">
+            <img src="<%=product.imageUrl%>" id="cardimg" height="260" width="445">
+        </div>
+        <div class="contextBx">
+            <h2><%=product.carname %></h2>
+            <h3>Model: <%=product.model %></h2>
+            <h3 class="price"><small>Price:Rs <%=product.price%></small></h3>
+            <form method="GET" action ="/book">
+                <input type="hidden" value="<%=product.carname%>" name="name">
+                <input type="hidden" value="<%=product.model%>" name="model">
+                <input type="hidden" value="<%=product.price%>" name="price">
+                <input type="submit" value="Book now">
+            </form>
+        </div>
+       
+    </div>
+    <% } %>
+      <% }else { %>
+        <div style="position: relative; left:90%; top:10%">
+       <h1 style="font-size:45px;">Cars Not Found!</h1>
+       </div>
+       <% } %>
+</div>
+    <div class="loginDiv">
+        <div class="close-btn">&times;</div>
+        <form class="form" action="/login", method="post">
+            <h2>Login</h2>
+            <div class="formelement">
+                <label for="username">Username:</label>
+                <br>
+                <input type="text", value="", placeholder="Enter email", name="username">
+            </div>
+    
+            <div class="formelement">
+                <Label for="password">Password:</Label>
+                <br>
+                <input type="password", value="", placeholder="Enter password", name="password">
+            </div>
+            <div class="formelement">
+                <span><label for="remember-me">Remember me</label><input type="checkbox", name="remember_me"></span>
+            <br>
+            <span><a href="">Forgot Password?</a></span>
+            <br>
+            <button id="signinBtn" type="submit">Sign In</button>
+            <br>
+                <button class="loginBtn loginBtn--facebook">Login with Facebook</button>
+                <button class="loginBtn loginBtn--google">Login with Google</button>
+                <span>Not a member? <a href="/signup">Sign up</a></span>   
+            </div>
+         </form>
+    </div>
+       
+    <!-- footer section -->
+    <footer>
+        <div class="container">
+            <div class="about-us">
+                <h2>About Us</h2>
+                <p>Whether you want to get all the information about your favourite car or you want to book your dream
+                    car that you have been planning all this while! CARZ4ALL is the place to be. Got some issues in your
+                    car? CARZ4ALL is there for you! Get to choose from a variety of different packages and service your
+                    car at the lowest cost possible.
+                    <br>
+                    <b>So what are you waiting for. Checkout CARZ4ALL Now!</b>
+                </p>
+                <ul class="social-media">
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="Brands.html">Popular Brands</a></li>
+                    <li><a href="Bookings.html">Bookings</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Categories.html">Category</a></li>
+                    <li><a href="Reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <div>
+                
+            </div>
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                <ul class="details">
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span>CARZ4ALL, Kasturba Rd, opp. Venkatappa Art Gallery <br> Shanthala Nagar, Ashok Nagar <br>
+                            Bengaluru, Karnataka 560001</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>9876523144</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span>carz4all@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>Copyright © 2022 CARZ4ALL. All Rights Reserved.</p>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
+    

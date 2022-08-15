@@ -35,4 +35,10 @@ Router.post('/login',  controller.login);
 
 Router.get('/protected_page',controller.protPage);
 
+Router.get('/brands',controller.brands);
+
+Router.get('/book',controller.book);
+
+Router.post('/placeBooking',controller.placeBooking);
+
 module.exports =Router;

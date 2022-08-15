@@ -53,6 +53,10 @@ module.exports = class Product{
     {
         return db.execute(`update specifications set carname='${carname}' ,model='${model}',category='${category}' ,tyresize='${tyresize}',tankcapacity='${tankcapacity}',suspension='${suspension}',groundclearance='${groundclearance}',dimension='${Dimension}',transmissiontype='${transmissiontype}',emissionstd='${emissionstd}',maxtorque='${maxtorque}',maxpower='${maxpower}',Eng_displacement='${Engdisplacement}',bluetoothaudion='${bluetoothaudion}',grossweight='${grossweight}' where id=${id}`);
     }
+    static fetchorders()
+    {
+        return db.execute(`select * from Bookings`);
+    }
     // save(){
     //     db.getConnection(function(err, conn) {
     //         // Do something with the connection

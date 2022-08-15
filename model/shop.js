@@ -86,5 +86,21 @@ module.exports = class Product{
     
     return db.execute(`select password from Customers where emailid = ('${req.body.username}')`);           
         }
-        
+        static brands(brand)
+        {
+            
+            return db.execute(`select carname, model, price,imageUrl from products where brand = '${brand}'`)
+        }
+    static book(name)
+    {  
+        return db.execute(`select carname,brand, model, price, colors, Fuel from products where carname = '${name}'`);
+    }
+    static user(user)
+    {   
+        return db.execute(`select firstname, lastname, Id from Customers where emailid = '${user}'`);
+    }
+    static placeBooking(carname,brand,model,price,payment_mode,colour,cust_name,fuel_type,ID)
+    {
+        return db.execute(`insert into Bookings values('${carname}', '${brand}', '${model}', '${price}','${payment_mode}', curdate(), '${colour}', '2022-10-10', '${cust_name}', '${fuel_type}', '${ID}')`);
+    }
 }

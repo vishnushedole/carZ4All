@@ -18,7 +18,7 @@
                 <li><a method="GET" href="/">Home</a></li>
                 <li><a method="GET" href="/cars">Cars</a></li>
                 <li><a method="GET" href="/services">Services</a></li>
-                <li><a method="GET" href="/compare">Category</a></li>
+                <li><a method="GET" href="/compare">Compare</a></li>
                 <li><a id="a" href="#R" >Review</a></li>     
             </ul> 
         </nav>
@@ -39,24 +39,24 @@
     <div class="brands">
         <h1 class="firstHeading">Choose From Your Favourite brands</h1>
         <div class="innerdiv">
-            <a href=""><img src="images/tata.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/maruti.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/hyundai.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/mahindra.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/honda.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/skoda.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/renault.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/volkswagen.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Tata Motors" onclick="location.href=this.href+'?brand='+id;return false;" ><img src="images/tata.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Maruti Suzuki" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/maruti.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Hyundai" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/hyundai.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Mahindra" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/mahindra.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Honda" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/honda.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Skoda" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/skoda.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Renault" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/renault.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Volkswagen" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/volkswagen.jpg" alt="" class="link-img"></a>
             </div>
         <div class="innerdiv">
-            <a href=""><img src="images/MG.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/kia.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/mercedes.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/audi.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/land rover.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/jeep.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/bmw.jpg" alt="" class="link-img"></a>
-            <a href=""><img src="images/jaguar.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="MG" onclick="location.href=this.href+'?brand='+id;return false;" ><img src="images/MG.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Kia" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/kia.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Mercedes Benz" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/mercedes.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Audi" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/audi.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Land Rover" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/land rover.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Jeep" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/jeep.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="BMW" onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/bmw.jpg" alt="" class="link-img"></a>
+            <a href="/brands" id="Jaguar"onclick="location.href=this.href+'?brand='+id;return false;"><img src="images/jaguar.jpg" alt="" class="link-img"></a>
         </div>
     </div>
     <div class="loginDiv">
@@ -88,7 +88,7 @@
          </form>
     </div>
     <!-- review section -->
-    <div class="reviews">
+    <div class="reviews" id="#R">
         <h2>Customer Reviews</h2>
         <div class="container">
             <div class="box">

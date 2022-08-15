@@ -15,4 +15,7 @@ Router.post('/update',admincontroller.update);
 Router.post('/savechanges',admincontroller.savechanges);
 
 Router.post('/savespecchanges',admincontroller.savespecchanges);
+
+Router.get('/orders',admincontroller.fetchorders);
+
 module.exports = Router;

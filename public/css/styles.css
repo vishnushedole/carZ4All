@@ -7,7 +7,6 @@ div{
 }
 body
 {
-    /* background-image: url('background.jpg'); */
     margin:0;
     padding: 0; 
     background-color:white;
@@ -42,8 +41,8 @@ body
     flex-wrap: nowrap;
     padding: 12px 5%;  
     background-color:purple;
+    
 }
-
 #first h1{
     font-weight:900;
     font-size: 40px;
@@ -333,6 +332,16 @@ body
     background-color: darkgray;
     transition: 0.3s;
 }
+.formelement input[type="text"]
+{
+    
+    
+    width: 94%;
+    
+    outline: none;
+    border:1px solid #aaa;
+    border-radius: 5px;
+}
 
 .loginDiv .form .formelement a{
     display: block;
@@ -503,3 +512,47 @@ footer .container .about-us p {
     font-size: 18px;
     font-weight: 600;
 }
+
+.card{
+    position: relative;
+    width: 320px;
+    height: 420px;
+    background:thistle;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: 100px;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 100%;
+}
+#cardimg{
+    width: 300px;
+    height: 200px;
+}
+
+.grid-container{
+    
+    position: relative;
+    top:0px;
+    left:-100px;
+    display:grid;
+    grid-template-columns: 510px 510px 510px;
+    grid-auto-rows: minmax(350px,auto);
+    grid-gap:10px;
+    grid-row-gap:15px;
+    padding: 20px;
+}
+.card{
+    box-shadow: 0 15px 15px 0 rgb(27, 27, 27);
+    transition: 0.4s;
+    justify-content: center;
+    background-color:white;
+    border: 1px solid white;
+    height :450px;
+    width: 450px;
+    border-radius: 10px;
+}
+

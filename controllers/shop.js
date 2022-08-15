@@ -146,6 +146,39 @@ exports.protPage=(req, res)=>{
     } 
 }
 
-
-
+exports.brands=(req, res)=>{
+    
+    Product.brands(req.query.brand).then(result=>{
+        
+        res.render('brands',{results:result[0]});
+    }).catch(err=>{
+        console.log(err);
+    });
+}
+exports.book=(req, res)=>{
+    
+    if(req.session.user){
+        Product.book(req.query.name).then(results=>{
+            
+            Product.user(req.session.user).then(userD=>{
+            
+                res.render("book", {results:results[0][0],user:userD[0][0]});
+             }).catch(err=>console.log(err));
+        }).catch(err=>{
+            console.log(err);
+        });
+        
+     }
+     else{
+         res.send("please login to continue");
+     }
+}
+exports.placeBooking=(req, res)=>{
+    console.log(req.body);
+    Product.placeBooking(req.body.carname,req.body.brand,req.body.model,req.body.price,req.body.payment_mode,req.body.colour,req.body.cust_name,req.body.fuel_type,req.body.ID).then(result=>{
+        res.send("Booking successfully done");
+    }).catch(err=>{
+        console.log(err);
+    });
+}
         

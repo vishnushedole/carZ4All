@@ -52,3 +52,11 @@ exports.savespecchanges=(req,res,next)=>{
     res.redirect('/admin/delete-update');
   })
 }
+
+exports.fetchorders=(req,res,next)=>{
+  Product.fetchorders().then(result=>{
+    
+    res.render('orders',{products:result[0]});
+  }).catch(err=>console.log(err));
+
+}

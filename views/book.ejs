@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id = "first">
+        <a href="/" style="text-decoration:none ;"><h1 style="color:aliceblue;">Carz4All</h1></a>
+        <nav class="right"> 
+            <ul>
+                <li><a href="Brands.html">Popular Brands</a></li>
+                <li><a href="Bookings.html">Bookings</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Categories.html">Category</a></li>     
+            </ul> 
+        </nav>
+            
+    </div>
+    
+    <h1 class="firstHeading">Place Booking</h1>
+    <div class="loginDiv" style="visibility:visible;">
+            <div>
+                
+                <form class="formelement", method="post", action = "/placeBooking">
+                    <label>Car name:</label><input type="text" name="carname" value="<%=results.carname %>"><br>
+                    <label>Brand:</label><input type="text" name="brand" value="<%=results.brand %>"><br>
+                    <label>Model:</label><input type="text" name="model" value="<%=results.model %>"><br>
+                    <label>Price:</label><input type="text" name="price" value="<%=results.price %>"><br>
+                    <label>Fuel Type:</label><input type="text" name="fuel_type" value="<%=results.Fuel %>"><br>
+                    <label for="payment_mode"></label>
+                    <br>
+                    <label>Cash</label>
+                    <input type="radio" name="payment_mode" value="Cash">
+                    <br>
+                    <label>Loan</label>
+                    <input type="radio" name="payment_mode" value="Loan">
+                    <br>
+                    <br>
+                    <label>Colour</label>
+                    <input type="text" name="colour"><br>
+                    <label>Customer Name</label><input type="text" name="cust_name" value="<%=user.firstname +' '+ user.lastname%>"><br>
+                    <label>Cutomer Id</label><input type="text" name="ID" value="<%=user.Id%>"><br>
+                    <input type="submit" value="confirm booking">
+                </form>
+            
+            </div>
+        </form>
+    
+   </div>         
+            
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/css/style.css" rel="stylesheet">
+        <script src="/css/script.js"></script>
+        <title>update-delete</title>
+    </head>
+    <body class="body">
+      <nav class="order-navigation-bar">
+          <h3>Admin page</h3>
+      </nav>
+      <div class="deleteUpd">
+        <div class="order-card">
+          <h4 id="car-slno">SLNO</h4>
+          <h4 id="cust_name">Customer</h4>
+          <h4 id="car-name">Car Name</h4>
+          <h4 id="model">Model</h4>
+          <h4 id="brand">Brand</h4>
+          <h4 id="price">Price</h4>
+          <h4 id="pay_mode">Payment mode</h4>
+          <h4 id="book_date">booking_date </h4>
+          <h4 id="del_date">delivery_date</h4>
+       </div>
+        <% for(let i=0;i<products.length;i++){ %>
+        <div class="order-card">
+           <h4 id="count"><%= i+1%></h4>
+           <h4 id="cust_name"><%=products[i].cust_name %></h4>
+          <h4 id="car-name"><%=products[i].name %></h4>
+          <h4 id="model"><%=products[i].model %></h4>
+          <h4 id="brand"><%=products[i].brand %></h4>
+          <h4 id="price"><%=products[i].price %></h4>
+          <h4 id="pay_mode"><%=products[i].payment_mode %></h4>
+          <h4 id="book_date1"><%=products[i].booking_date %> </h4>
+          <h4 id="del_date1"><%=products[i].delivery_date %></h4>
+           </form>
+        </div>
+        <%} %>
+        
+      </div>
+      </body>
+      </html>
