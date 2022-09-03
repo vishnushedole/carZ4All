@@ -17,7 +17,7 @@
           <h4 id="model">Model</h4>
           <h4 id="price">Price</h4>
           <h4 id="category">Category</h4>
-          <h4 id="brand">Brand</h4>
+          <h4 id="brand1">Brand</h4>
        </div>
         <% for(let i=0;i<products.length;i++){ %>
         <div class="car-card">
@@ -27,7 +27,7 @@
            <h4 id="model"><%= products[i].model%></h4>
            <h4 id="price"><%= products[i].price %></h4>
            <h4 id="category"><%= products[i].category %></h4>
-           <h4 id="brand"><%= products[i].brand %></h4>
+           <h4 id="brand1"><%= products[i].brand %></h4>
            <form class="frm" action="/admin/delete-product" method="POST"  >
             <input type="hidden" value="<%=products[i].id %>" name="id">
             <input type="hidden" value="<%=products[i].carname %>" name="name">

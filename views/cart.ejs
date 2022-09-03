@@ -6,13 +6,18 @@
         <title>update-delete</title>
     </head>
     <body class="body">
-      <nav class="order-navigation-bar">
-          <h3>Admin page</h3>
+      <nav class="order-navigation-bar"> 
+            <h3 id="heading">CarZ4All</h3>
+            <a id="a" method="GET" href="/">Home</a>
+            <a id="a" method="GET" href="/cars">Cars</i></a>
+            <a id="a" method="GET" href="/services">Services</a>
+            <a id="a" method="GET" href="/compare">Compare</a>
+            <a id="a" href="#R" >Review</a>
+          
       </nav>
       <div class="deleteUpd">
-        <div class="order-card">
+        <div class="mybookings-card">
           <h4 id="car-slno">SLNO</h4>
-          <h4 id="cust_name">Customer</h4>
           <h4 id="car-name">Car Name</h4>
           <h4 id="model">Model</h4>
           <h4 id="brand">Brand</h4>
@@ -23,9 +28,8 @@
           <h4 id="status">Status</h4>
        </div>
         <% for(let i=0;i<products.length;i++){ %>
-        <div class="order-card">
+        <div class="mybookings-card">
            <h4 id="count"><%= i+1%></h4>
-           <h4 id="cust_name"><%=products[i].cust_name %></h4>
           <h4 id="car-name"><%=products[i].name %></h4>
           <h4 id="model"><%=products[i].model %></h4>
           <h4 id="brand"><%=products[i].brand %></h4>
@@ -33,7 +37,7 @@
           <h4 id="pay_mode"><%=products[i].payment_mode %></h4>
           <h4 id="book_date1"><%=products[i].booking_date %> </h4>
           <h4 id="del_date1"><%=products[i].delivery_date %></h4>
-          <h4 id="status"><% if(curdate>=products[i].delivery_date){ %>Delivered <% } else { %>Active <%}%></h4>
+          <h4 id="status"><% if(curdate>=products[i].delivery_date){ %>Delivered <% } else { %>Not Delivered <%}%></h4>
            </form>
         </div>
         <%} %>

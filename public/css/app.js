@@ -68,3 +68,12 @@ function setCaption(nextIndex)
             break;
     }
 };
+ function check_profile()
+ {
+    let ele=document.getElementById('uprofile').style.visibility;
+    if(ele=="hidden")
+    document.getElementById('uprofile').style.visibility="visible";
+    else
+    document.getElementById('uprofile').style.visibility="hidden";
+ }
+ 

@@ -1,6 +1,5 @@
 body{
    position: absolute;
-
    width:1530px;
    border: 0px;
    margin: 0px;
@@ -40,6 +39,28 @@ body{
     top:35px;
     font-size: 25px;
     left:300px;
+}
+#signin{
+    background-color: rgb(213, 87, 169);
+    color:white;
+    position: absolute;
+    left:1400px;
+    top:30px;
+    width: 80px;
+    margin-top: 5px;
+    height: 30px;
+    border:none;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+}
+#icon{
+    position: absolute;
+    left:1400px;
+    top:30px;
+    cursor: pointer;
 }
 .grid-container{
    
@@ -336,7 +357,17 @@ body{
 .order-card{
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
     display:grid;
-    grid-template-columns:  10%  10% 10% 10% 10% 10% 10% 15% 15%;
+    grid-template-columns:  10% 10%  10% 10% 10% 10% 5% 15% 15% 5%;
+    background-color: white;
+    /* border:3px solid rgb(140, 138, 138); */
+    border-radius: 7px;
+    height:100px;
+    width:100%;
+}
+.mybookings-card{
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    display:grid;
+    grid-template-columns:  10%   10% 10% 10% 10% 5% 20% 20% 5%;
     background-color: white;
     /* border:3px solid rgb(140, 138, 138); */
     border-radius: 7px;
@@ -356,19 +387,19 @@ body{
 #car-name{
     position: relative;
     top:5px;
-    left:-20px;
+    left:-40px;
     font-size: 22px;
 }
 #price{
     position: relative;
     top:5px;
-    left:-20px;
+    left:-40px;
     font-size: 22px;
 }
 #model{
     position:relative;
     top:5px;
-    left:-10px;
+    left:-30px;
     font-size: 22px;
 }
 #category{
@@ -379,7 +410,13 @@ body{
 #brand{
     position:relative;
     top:5px;
-    left:-25px;
+    left:-45px;
+    font-size: 22px;
+}
+#brand1{
+    position:relative;
+    top:5px;
+    left:-5px;
     font-size: 22px;
 }
 #car-slno{
@@ -391,36 +428,44 @@ body{
 #cust_name{
     position: relative;
     top:5px;
-    left:-30px;
+    left:-50px;
     font-size: 22px;
 }
 #pay_mode{
     position: relative;
     top:5px;
-    left:-40px;
+    left:-70px;
     font-size: 22px;
 }
 #book_date{
     position: relative;
     top:5px;
-  
+    left:-30px;
     font-size: 22px;
 }
 #del_date{
     position: relative;
     top:5px;
-    left:15px;
+    left:-5px;
     font-size: 22px;
+}
+#status{
+    color:green;
+    font-size: 22px;
+    position: relative;
+    left:-15px;
+    top:10px;
 }
 #book_date1{
     position: relative;
     top:-5px;
+    left:-30px;
     font-size: 22px;
 }
 #del_date1{
     position: relative;
     top:-5px;
-    left:15px;
+    left:-15px;
     font-size: 22px;
 }
 #car-img{
@@ -827,7 +872,43 @@ footer .container .about-us p {
     border-radius: 5px;
 }
 
+.userp{
+    
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap:5px;
+    z-index: 3;
+    /* box-shadow: 20 20px 20px 20 rgb(27, 27, 27); */
+    position:absolute;
+    left:1350px;
+    top:100px;
+    width:120px;
+    height:100px;
+    background-color: white;
+    border:2px solid grey;
+}
 
-
-
-/* navingation bar */
+#logout{
+    color: white;
+    width:120px;
+    height:40px;
+    border-radius: 5px;
+    text-align: center;
+    background-color:violet;
+    padding:10px 10px 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+#My_bookings{
+    color: white;
+    height:40px;
+    width:120px;
+    border-radius: 5px;
+    text-align: center;
+    background-color:violet;
+    padding:10px 10px 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+/* Login div */

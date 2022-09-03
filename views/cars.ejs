@@ -16,8 +16,56 @@
           <a id="a" method="GET" href="/services">Services</a>
           <a id="a" method="GET" href="/compare">Compare</a>
           <a id="a" href="#R" >Review</a>
+        </div>
+        <% if(user){ %>
+          <div onclick="check_profile()" id="icon">
+          <i class="fa-solid fa-circle-user fa-4x"></i> 
       </div>
+      <% } else{ %>
       
+          <!-- <button id="signin">SIGN IN</button> -->
+        
+          <% } %> 
+          <div class="userp" id="uprofile" style="visibility:hidden">
+            <form action="/my_bookings">
+              <input type="hidden" name="user" value="<%= user%>">
+            <button id="My_bookings"><a  >My Bookings</a></button>
+          </form>
+          <form action="/logout">
+            <button id="logout"><a>LOGOUT</a></button>    
+        </form>
+          </div> 
+       <!-- login form -->
+       <div class="loginDiv" style="visibility:hidden; position: absolute;">
+        <div class="close-btn">&times;</div>
+        <form class="form" action="/login", method="post">
+            <h2>Login</h2>
+            <div class="formelement">
+                <label for="username">Username:</label>
+                <br>
+                <input type="text", value="", placeholder="Enter email", name="username">
+            </div>
+    
+            <div class="formelement">
+                <Label for="password">Password:</Label>
+                <br>
+                <input type="password", value="", placeholder="Enter password", name="password">
+            </div>
+            <div class="formelement">
+                <span><label for="remember-me">Remember me</label><input type="checkbox", name="remember_me"></span>
+            <br>
+            <span><a href="">Forgot Password?</a></span>
+            <br>
+            <button id="signinBtn" type="submit">Sign In</button>
+            <br>
+                <button class="loginBtn loginBtn--facebook">Login with Facebook</button>
+                <button class="loginBtn loginBtn--google">Login with Google</button>
+                <span>Not a member? <a href="/signup">Sign up</a></span>   
+            </div>
+         </form>
+    </div>
+
+
       <div class="filters">
         <div>
         <form action="/search_cars" method="POST"><input type="submit" value="Search" id="src-btn">
@@ -79,8 +127,10 @@
         </div>
           <form method="GET">
             <input type="hidden" value="<%=product.id%>" name="id">
-            <input type="hidden" value="<%=product.carname%>" name="carname">
-            <button class="btn" formaction="/buycar">Buy</button>
+            <input type="hidden" value="<%=product.carname%>" name="name">
+            <input type="hidden" value="<%=product.model%>" name="model">
+            <input type="hidden" value="<%=product.price%>" name="price">
+            <button class="btn" formaction="/book">Book</button>
           <button class="btn" formaction="/viewcar">View</button>
           </form>
           
@@ -145,11 +195,11 @@
           <div class="quicklinks">
               <h2>Quick Links</h2>
               <ul>
-                  <li><a href="Brands.html">Popular Brands</a></li>
-                  <li><a href="Bookings.html">Bookings</a></li>
-                  <li><a href="Services.html">Services</a></li>
-                  <li><a href="Categories.html">Category</a></li>
-                  <li><a href="Reviews.html">Reviews</a></li>
+                  <li><a  method="GET" href="/">Home</a></li>
+                  <li><a  method="GET" href="/cars">Cars</i></a></li>
+                  <li><a  method="GET" href="/services">Services</a></li>
+                  <li><a  method="GET" href="/compare">Compare</a></li>
+                  <li><a href="#R" >Review</a></li>
               </ul>
           </div>
           <div class="contact-us">

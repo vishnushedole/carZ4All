@@ -22,7 +22,24 @@
                 <li><a id="a" href="#R" >Review</a></li>     
             </ul> 
         </nav>
-        <button id="signin">SIGN IN</button>    
+        <% if(user){ %>
+            <div onclick="check_profile()">
+            <i class="fa-solid fa-circle-user fa-4x"></i> 
+        </div>
+        <% } else{ %>
+            <div>
+            <button id="signin">SIGN IN</button>
+            </div> 
+            <% } %>  
+        <div class="userp" id="uprofile" style="visibility:hidden">
+            <form action="/my_bookings">
+                <input type="hidden" name="user" value="<%= user%>">
+              <button id="My_bookings"><a  >My Bookings</a></button>
+            </form>
+            <form action="/logout">
+              <button id="logout"><a>LOGOUT</a></button>    
+          </form>
+          </div> 
     </div>
     
     <h1 class="firstHeading">Book Your Dream Car Now!!</h1>
@@ -132,11 +149,11 @@
             <div class="quicklinks">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="Brands.html">Popular Brands</a></li>
-                    <li><a href="Bookings.html">Bookings</a></li>
-                    <li><a href="Services.html">Services</a></li>
-                    <li><a href="Categories.html">Category</a></li>
-                    <li><a href="Reviews.html">Reviews</a></li>
+                    <li><a  method="GET" href="/">Home</a></li>
+                  <li><a  method="GET" href="/cars">Cars</i></a></li>
+                  <li><a  method="GET" href="/services">Services</a></li>
+                  <li><a  method="GET" href="/compare">Compare</a></li>
+                  <li><a href="#R" >Review</a></li>
                 </ul>
             </div>
             <div class="contact-us">

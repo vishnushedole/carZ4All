@@ -22,7 +22,26 @@
                 <li><a id="a" href="#R" >Review</a></li>          
             </ul> 
         </nav>
-        <button id="logout"><a href="/logout">LOGOUT</a></button>    
+        
+            <% if(user){ %>
+                <div onclick="check_profile()" style="cursor:pointer;">
+                <i class="fa-solid fa-circle-user fa-4x"></i> 
+            </div>
+            <% }else{%>
+                <div>
+                <button id="signin">SIGN IN</button>
+                </div> 
+                <% } %> 
+            
+            <div class="userp" id="uprofile" style="visibility:hidden">
+                <form action="/my_bookings">
+                    <input type="hidden" name="user" value="<%= user%>">
+                  <button id="My_bookings"><a  >My Bookings</a></button>
+                </form>
+                <form action="/logout">
+                  <button id="logout"><a>LOGOUT</a></button>    
+              </form>    
+          </div>     
     </div>
     
     <h1 class="firstHeading">Welcome</h1>

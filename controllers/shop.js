@@ -1,10 +1,12 @@
 const Product = require('../model/shop');
 const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 let prods =[];
 
 exports.cars=(req,res,next)=>{
     Product.fetchAll().then(result=>{
-    res.render('cars',{products:result[0]});
+    res.render('cars',{products:result[0],user:req.session.user});
     }).catch(err=>console.log(err));
 }
 
@@ -28,7 +30,7 @@ exports.filter=(req,res,next)=>{
 }
 exports.viewcar=(req,res,next)=>{
     Product.getById(req.query.id).then(result=>{
-       Product.getByname(req.query.carname).then(specs=>{
+       Product.getByname(req.query.name).then(specs=>{
         res.render('view-car',{product:result[0][0],specs:specs[0][0]});
        }).catch(err=>console.log(err));
     }).catch(err=>console.log(err));
@@ -40,7 +42,7 @@ exports.compare=(req,res,next)=>{
     res.render('compare',{cars:[]});
 }
 exports.comparecars=(req,res,next)=>{
-    
+    console.log(req.query);
     Product.getcars(req.query.car1,req.query.car2,req.query.model1,req.query.model2).then(result=>{
         
        if(result[0].length==1)
@@ -75,9 +77,9 @@ exports.Oldnew=(req,res,next)=>{
 exports.home=(req,res,next)=>{
     if(req.session.user)
     {
-        res.render("protected");
+        res.render("protected",{user:req.session.user});
     }else{
-        res.render("index");
+        res.render("index",{user:req.session.user});
     }
 }
 exports.signup=(req,res,next)=>{
@@ -85,21 +87,47 @@ exports.signup=(req,res,next)=>{
 }
 exports.add_User=(req,res,next)=>{
     // console.log(req.body);
-    Product.adduser(req,res).then(result=>{
-           
-           res.render('protected'); 
-        },err=>{
-            console.log(err);
-        });
+    const pw = req.body.password;
+            const cpw = req.body.confirm;
+            let hashedPW;
+            if(pw!=cpw)
+            {
+                res.send("Passwords don't match"); 
+            }
+            if(pw === cpw){
+                var rand = Math.floor(Math.random() * 100);
+                // hashing 
+                bcrypt.hash(pw, saltRounds, (err, hash)=>{
+                    if(err){
+                        return console.log('Cannot encrypt');
+                    }
+                    else{
+                         hashedPW = hash;
+                         Product.adduser(req,hashedPW,rand).then(result=>{
+                            req.session.user = req.body.username;
+                            res.render('protected',{user:req.session.user}); 
+                            },err=>{
+                                console.log(err);
+                            });
+                    }
+                }); 
+               
+            }
+          
+
 }
 exports.logout=(req, res)=>{
+ 
     if(req.session.user)
     {
-     req.session.destroy(()=>{
-        
-         res.clearCookie("user_sid");
-         res.redirect('/');
+     req.session.destroy((result,err)=>{
      });
+     res.clearCookie("user_sid");  
+     res.redirect('/');
+    }
+    else
+    {
+        res.send('<h1>You are Not logged in</h1>')
     }
  }
 
@@ -123,7 +151,7 @@ exports.login=(req, res)=>{
                 bcrypt.compare(req.body.password, correctPW, async(err, isMatch)=>{
                 if(isMatch){
                     req.session.user = req.body.username;
-        
+                    
                     res.redirect('/protected_page');
                   
                 }
@@ -139,7 +167,7 @@ exports.login=(req, res)=>{
 }
 exports.protPage=(req, res)=>{
     if(req.session.user){
-        res.render("protected", {id: req.session.user.id});
+        res.render("protected", {id: req.session.user.id,user:req.session.user});
     }
     else{
         res.redirect('/');
@@ -170,15 +198,22 @@ exports.book=(req, res)=>{
         
      }
      else{
-         res.send("please login to continue");
+         res.send('<h1 style="text-align:center">Please Login to continue<h1>');
      }
 }
 exports.placeBooking=(req, res)=>{
-    console.log(req.body);
+  
     Product.placeBooking(req.body.carname,req.body.brand,req.body.model,req.body.price,req.body.payment_mode,req.body.colour,req.body.cust_name,req.body.fuel_type,req.body.ID).then(result=>{
-        res.send("Booking successfully done");
+        res.send('<h1 style="text-align:center">Booking successfully done<h1>');
     }).catch(err=>{
         console.log(err);
     });
 }
         
+exports.cart=(req,res)=>{
+    Product.getcart(req.query.user).then(result=>{
+        let date_ob = new Date();
+        
+        res.render('cart',{products:result[0],curdate:date_ob});
+      }).catch(err=>console.log(err));
+}

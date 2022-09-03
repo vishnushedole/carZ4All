@@ -1,7 +1,6 @@
 
 const db=require('../util/database');
-const saltRounds = 10;
-const bcrypt = require('bcrypt');
+
 
 module.exports = class Product{
     static fetchAll(){
@@ -53,39 +52,17 @@ module.exports = class Product{
             return db.execute(`select * from products order by launch_year desc`);
         }
     }
-    static adduser(req,res)
+    static adduser(req,hashedPW,rand)
     {
-        
-            const pw = req.body.password;
-            const cpw = req.body.confirm;
-            let hashedPW;
-            if(pw === cpw){
-                var rand = Math.floor(Math.random() * 100);
-                // hashing 
-                bcrypt.hash(pw, saltRounds, (err, hash)=>{
-                    if(err){
-                        return console.log('Cannot encrypt');
-                    }
-                    else{
-                         hashedPW = hash;
-                          
-                    }
-                }); 
-                return db.execute(`insert into Customers values('${req.body.firstname}','${req.body.lastname}', '${req.body.username}', '${hashedPW}','${req.body.firstname+rand}')`);   
-            }
-            else{
-                res.send("Passwords don't match"); 
-            } 
-        
+            return db.execute(`insert into Customers values('${req.body.firstname}','${req.body.lastname}', '${req.body.username}', '${hashedPW}','${req.body.firstname+rand}')`);   
    }
    static login(req)
    {
     
     
     const pw = req.body.password;
-    
     return db.execute(`select password from Customers where emailid = ('${req.body.username}')`);           
-        }
+    }
         static brands(brand)
         {
             
@@ -101,6 +78,11 @@ module.exports = class Product{
     }
     static placeBooking(carname,brand,model,price,payment_mode,colour,cust_name,fuel_type,ID)
     {
-        return db.execute(`insert into Bookings values('${carname}', '${brand}', '${model}', '${price}','${payment_mode}', curdate(), '${colour}', '2022-10-10', '${cust_name}', '${fuel_type}', '${ID}')`);
+       
+        return db.execute(`insert into Bookings values('${carname}', '${brand}', '${model}', '${price}','${payment_mode}', curdate(), '${colour}', '2022-08-28', '${cust_name}', '${fuel_type}', '${ID}')`);
+    }
+    static getcart(user)
+    {
+        return db.execute(`select * from bookings b,customers c where b.cust_id=c.Id and c.emailid='${user}'`);
     }
 }

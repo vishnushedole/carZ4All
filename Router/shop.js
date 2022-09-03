@@ -41,4 +41,6 @@ Router.get('/book',controller.book);
 
 Router.post('/placeBooking',controller.placeBooking);
 
+Router.get('/my_bookings',controller.cart);
+
 module.exports =Router;

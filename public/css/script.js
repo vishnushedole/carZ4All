@@ -2,6 +2,16 @@
 var ID =['0','1','2'];
 var ID1 =['0e','1e','2e']
 var dele=0;
+
+document.querySelector('#signin').addEventListener("click",function()
+{
+    document.querySelector(".loginDiv").style.visibility="visible";
+});
+document.querySelector(".loginDiv .close-btn").addEventListener("click", function()
+    {
+        document.querySelector(".loginDiv").style.visibility="hidden"
+    });
+    
 function leftrotate(s){
     var i,index,id;
     
@@ -132,12 +142,12 @@ function chk()
     let m1=document.getElementById('m1').value;
     let m2=document.getElementById('m2').value;
     
-    // if(c1.length==0 || c2.length==0 || m1.length==0 || m2.length==0)
-    // {
-    //     return false;
-    // }
-    // else if(c1==c2)
-    // return false;
+    if(c1.length==0 || c2.length==0 || m1.length==0 || m2.length==0)
+    {
+        return false;
+    }
+    else if(c1==c2)
+    return false;
     
     
     return true;
@@ -160,3 +170,19 @@ function mov()
     document.getElementById('f').style.top="1250px";
     document.getElementById('c').style.top="1220px";
 }
+function check_profile()
+ {
+    console.log("hi");
+    let ele=document.getElementById('uprofile').style.visibility;
+    console.log(ele);
+    if(ele=="hidden")
+    {
+        document.getElementById('uprofile').style.visibility="visible";
+        
+    }
+    else
+    document.getElementById('uprofile').style.visibility="hidden";
+ }
+
+
+
