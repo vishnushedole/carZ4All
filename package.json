@@ -1,5 +1,5 @@
 {
-  "name": "4thsem_project",
+  "name": "cars4all",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -23,6 +23,7 @@
     "cors": "^2.8.5",
     "express-session": "^1.17.3",
     "mysql": "^2.18.1",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19"
   }
 }
