@@ -12,19 +12,19 @@ exports.cars=(req,res,next)=>{
 
 exports.search=(req,res,next)=>{
     Product.search(req.body.carname).then(result=>{
-        res.render('cars',{products:result[0]});
+        res.render('cars',{products:result[0],user:req.session.user});
     }).catch(err=>console.log(err));
 }
 
 exports.filter=(req,res,next)=>{
     if(req.body.category==undefined || req.body.range==undefined || req.body.fueltype==undefined)
     {
-        res.render('cars',{products:[]});
+        res.render('cars',{products:[],user:req.session.user});
     }
     else
     {
     Product.filter(req.body.range,req.body.category,req.body.fueltype).then(result=>{
-        res.render('cars',{products:result[0]});
+        res.render('cars',{products:result[0],user:req.session.user});
     }).catch(err=>console.log(err));
      }
 }
@@ -56,22 +56,22 @@ exports.comparecars=(req,res,next)=>{
 }
 exports.Lowhigh=(req,res,next)=>{
     Product.sort(1).then(result=>{
-        res.render('cars',{products:result[0]});
+        res.render('cars',{products:result[0],user:req.session.user});
     })
 }
 exports.Highlow=(req,res,next)=>{
     Product.sort(2).then(result=>{
-        res.render('cars',{products:result[0]});
+        res.render('cars',{products:result[0],user:req.session.user});
     })
 }
 exports.Newold=(req,res,next)=>{
     Product.sort(3).then(result=>{
-        res.render('cars',{products:result[0]});
+        res.render('cars',{products:result[0],user:req.session.user});
     })
 }
 exports.Oldnew=(req,res,next)=>{
     Product.sort(4).then(result=>{
-        res.render('cars',{products:result[0]});
+        res.render('cars',{products:result[0],user:req.session.user});
     })
 }
 exports.home=(req,res,next)=>{
@@ -83,7 +83,7 @@ exports.home=(req,res,next)=>{
     }
 }
 exports.signup=(req,res,next)=>{
-    res.render('signup');
+    res.render('signup',{user:req.session.user});
 }
 exports.add_User=(req,res,next)=>{
     // console.log(req.body);
@@ -94,6 +94,7 @@ exports.add_User=(req,res,next)=>{
             {
                 res.send("Passwords don't match"); 
             }
+            if(req.body.password==""||req.body.confirm==""||req.body.username==""||req.body.firstname==""||req.body.lastname=="")
             if(pw === cpw){
                 var rand = Math.floor(Math.random() * 100);
                 // hashing 
