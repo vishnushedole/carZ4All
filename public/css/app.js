@@ -7,31 +7,27 @@ document.querySelector(".loginDiv .close-btn").addEventListener("click", functio
         document.querySelector(".loginDiv").style.visibility="hidden"
     });
 
-const cars = ["images/slavia.jpg", "images/virtus.jpg", "images/venue.jpg", "images/tigor.jpg", "images/scorpio.jpg"];
-function next(src)
+
+function next()
 {
     /* let currentPath = window.location.pathname; */
-    
-    let curr = document.querySelector("#image").src;
+    const cars = ["images/slavia.jpg", "images/virtus.jpg", "images/venue.jpg", "images/tigor.jpg", "images/scorpio.jpg"];
+    let curr = document.getElementById("image").src;
+   
     let modified = curr.replace(`http://localhost:3000/`, "");
     let index = cars.indexOf(modified);
-    let nextIndex;
-    if(index==4)
-    {
-        nextIndex = 0;
-    }
-    else{
-        nextIndex = index+1;
-    }
+    let nextIndex  = (index+1)%5;
     
     let path = "http://localhost:3000/"+cars[nextIndex];
-    document.querySelector("#image").setAttribute("src",path);
+    
+    document.getElementById("image").setAttribute("src",path);
   setCaption(nextIndex);
 }
 
-function prev(src)
+function prev()
 {
-    let curr = document.querySelector("#image").src;
+    const cars = ["images/slavia.jpg", "images/virtus.jpg", "images/venue.jpg", "images/tigor.jpg", "images/scorpio.jpg"];
+    let curr = document.getElementById("image").src;
     let modified = curr.replace("http://localhost:3000/", "");
     let index = cars.indexOf(modified);
     let nextIndex;
@@ -44,7 +40,7 @@ function prev(src)
     }
     
     let path = "http://localhost:3000/"+cars[nextIndex];
-    document.querySelector("#image").setAttribute("src",path);
+    document.getElementById("image").setAttribute("src",path);
     setCaption(nextIndex);
 } 
 function setCaption(nextIndex)

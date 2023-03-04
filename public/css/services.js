@@ -5,7 +5,7 @@ function cost1(){
     var val = document.getElementById('cars1');
     var selectedText = val.options[val.selectedIndex].innerHTML;
     var estimatedcost;
-
+    
     for(let i=0;i<5;i++)
     {
         if(selectedText==cartypes[i])
@@ -30,9 +30,10 @@ document.getElementById('conf').style.visibility="visible";
 }
 
 function cost2(){
-    var val = document.getElementById('cars1');
+    var val = document.getElementById('cars2');
     var selectedText = val.options[val.selectedIndex].innerHTML;
     var estimatedcost;
+    
 
     for(let i=0;i<5;i++)
     {
@@ -57,9 +58,10 @@ document.getElementById('conf').style.visibility="visible";
 }
 
 function cost3(){
-    var val = document.getElementById('cars1');
+    var val = document.getElementById('cars3');
     var selectedText = val.options[val.selectedIndex].innerHTML;
     var estimatedcost;
+   
 
     for(let i=0;i<5;i++)
     {

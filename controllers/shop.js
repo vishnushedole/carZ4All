@@ -42,7 +42,7 @@ exports.compare=(req,res,next)=>{
     res.render('compare',{cars:[]});
 }
 exports.comparecars=(req,res,next)=>{
-    console.log(req.query);
+    
     Product.getcars(req.query.car1,req.query.car2,req.query.model1,req.query.model2).then(result=>{
         
        if(result[0].length==1)
@@ -147,12 +147,12 @@ exports.login=(req, res)=>{
             res.send("Account with given username does not exist");
            }
             else{
+                
                 var correctPW = resultArray[0][0].password;
                
                 bcrypt.compare(req.body.password, correctPW, async(err, isMatch)=>{
                 if(isMatch){
                     req.session.user = req.body.username;
-                    
                     res.redirect('/protected_page');
                   
                 }
@@ -182,7 +182,7 @@ exports.brands=(req, res)=>{
         res.render('brands',{results:result[0]});
     }).catch(err=>{
         console.log(err);
-    });
+    }); 
 }
 exports.book=(req, res)=>{
     

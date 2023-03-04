@@ -61,7 +61,8 @@ module.exports = class Product{
     
     
     const pw = req.body.password;
-    return db.execute(`select password from Customers where emailid = ('${req.body.username}')`);           
+    
+    return db.execute(`select password from Customers where emailid = '${req.body.username}'`);           
     }
         static brands(brand)
         {

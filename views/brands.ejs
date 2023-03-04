@@ -46,6 +46,31 @@
         </div>
        
     </div>
+
+
+<div class="card" >
+        <img src="<%= product.imageurl %>" class="card-img" alt="car-image" height="260" width="445">
+        <div class="card-body">
+          <h3 class="card-title"><%= product.carname %></h3>
+          <!-- <div class="disc"> -->
+          <h4 class="card-text"><%= product.model %></h4>
+          <h4 class="card-text" style="color:grey"><i class="fa-solid fa-gas-pump"></i> <%= product.Fuel %></h4>
+          <h4 class="card-text" style="color:rgb(50, 48, 48)"><i class="fa-solid fa-indian-rupee-sign"></i><%= product.price %></h4>
+          <!-- </div> -->
+        </div>
+          <form method="GET">
+            <input type="hidden" value="<%=product.id%>" name="id">
+            <input type="hidden" value="<%=product.carname%>" name="name">
+            <input type="hidden" value="<%=product.model%>" name="model">
+            <input type="hidden" value="<%=product.price%>" name="price">
+            <button class="btn" formaction="/book">Book</button>
+          <button class="btn" formaction="/viewcar">View</button>
+          </form>
+          
+        
+      </div>
+
+
     <% } %>
       <% }else { %>
         <div style="position: relative; left:90%; top:10%">
