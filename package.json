@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "start-server": "nodemon server.js"
+    "start-server": "nodemon server.js",
+    "build":"npm install"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +24,6 @@
     "cors": "^2.8.5",
     "express-session": "^1.17.3",
     "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.19"
+    "mysql2": "^2.3.3"
   }
 }
