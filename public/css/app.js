@@ -14,11 +14,11 @@ function next()
     const cars = ["images/slavia.jpg", "images/virtus.jpg", "images/venue.jpg", "images/tigor.jpg", "images/scorpio.jpg"];
     let curr = document.getElementById("image").src;
    
-    let modified = curr.replace(`http://localhost:3000/`, "");
+    let modified = curr.replace("https://carz4all-ghuo.onrender.com/", "");
     let index = cars.indexOf(modified);
     let nextIndex  = (index+1)%5;
     
-    let path = "http://localhost:3000/"+cars[nextIndex];
+    let path = "https://carz4all-ghuo.onrender.com/"+cars[nextIndex];
     
     document.getElementById("image").setAttribute("src",path);
   setCaption(nextIndex);
@@ -28,7 +28,7 @@ function prev()
 {
     const cars = ["images/slavia.jpg", "images/virtus.jpg", "images/venue.jpg", "images/tigor.jpg", "images/scorpio.jpg"];
     let curr = document.getElementById("image").src;
-    let modified = curr.replace("http://localhost:3000/", "");
+    let modified = curr.replace("https://carz4all-ghuo.onrender.com/", "");
     let index = cars.indexOf(modified);
     let nextIndex;
     if(index==0)
@@ -39,7 +39,7 @@ function prev()
         nextIndex = index-1;
     }
     console.log(nextIndex);
-    let path = "http://localhost:3000/"+cars[nextIndex];
+    let path = "https://carz4all-ghuo.onrender.com/"+cars[nextIndex];
     console.log(path)
     document.getElementById("image").setAttribute("src",path);
     setCaption(nextIndex);
