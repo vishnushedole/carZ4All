@@ -38,8 +38,9 @@ function prev()
     else{
         nextIndex = index-1;
     }
-    
+    console.log(nextIndex);
     let path = "http://localhost:3000/"+cars[nextIndex];
+    console.log(path)
     document.getElementById("image").setAttribute("src",path);
     setCaption(nextIndex);
 } 
